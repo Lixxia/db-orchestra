@@ -1,5 +1,12 @@
 package models;
 
+import java.util.*;
+import javax.persistence.*;
+
+import play.db.ebean.*;
+import play.data.format.*;
+import play.data.validation.*;
+
 @Entity
 @Table(name = "Orchestra")
 public class Orchestra extends Model {
@@ -15,4 +22,9 @@ public class Orchestra extends Model {
 
 	@Column(name = "style")
 	private String style;
+
+	@JsonIgnore
+    @OneToOne
+    @JoinColumn(name = "player_id", referencedColumnName = "id")
+	private Player myPlayer;
 }

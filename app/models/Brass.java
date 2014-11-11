@@ -1,5 +1,12 @@
 package models;
 
+import java.util.*;
+import javax.persistence.*;
+
+import play.db.ebean.*;
+import play.data.format.*;
+import play.data.validation.*;
+
 @Entity
 @Table(name = "Brass")
 public class Brass extends Model {
@@ -21,4 +28,9 @@ public class Brass extends Model {
 
 	@Column(name = "player_id")
 	private int player_id;
+
+	@JsonIgnore
+    @OneToOne
+    @JoinColumn(name = "player_id", referencedColumnName = "id")
+	private Player myPlayer;
 }
