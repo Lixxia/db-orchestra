@@ -23,9 +23,8 @@ public class Woodwind extends Model {
 	@Column(name = "player_id")
 	private int player_id;
 
-	@JsonIgnore
     @OneToOne
     @JoinColumn(name = "player_id", referencedColumnName = "id")
-	private Player myPlayer;
+	private Players myPlayer;
 
 }

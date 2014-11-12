@@ -26,6 +26,10 @@ public class SymphonicString extends Model {
 	@Column(name = "clef")
 	private String clef;
 
-	@Column(name = "player_int")
-	private int player_int;
+	@Column(name = "player_id")
+	private int player_id;
+
+    @OneToOne
+    @JoinColumn(name = "player_id", referencedColumnName = "id")
+	private Players myPlayer;
 }

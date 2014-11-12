@@ -23,8 +23,7 @@ public class Orchestra extends Model {
 	@Column(name = "style")
 	private String style;
 
-	@JsonIgnore
     @OneToOne
     @JoinColumn(name = "player_id", referencedColumnName = "id")
-	private Player myPlayer;
+	private Players myPlayer;
 }

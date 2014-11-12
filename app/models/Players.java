@@ -26,9 +26,20 @@ public class Players extends Model {
 	@Column(name = "telephone")
 	private String telephone;
 
-	
 	@OneToOne(cascade = CascadeType.ALL, mappedBy = "Players", fetch = FetchType.EAGER)
 	private Brass myBrass;
+
+	@OneToOne(cascade = CascadeType.ALL, mappedBy = "Players", fetch = FetchType.EAGER)
+	private Woodwind myWoodwind;
+
+	@OneToOne(cascade = CascadeType.ALL, mappedBy = "Players", fetch = FetchType.EAGER)
+	private Keyboard myKeyboard;
+
+	@OneToOne(cascade = CascadeType.ALL, mappedBy = "Players", fetch = FetchType.EAGER)
+	private Percussion myPercussion;
+
+	@OneToOne(cascade = CascadeType.ALL, mappedBy = "Players", fetch = FetchType.EAGER)
+	private SymphonicString mySymphonicString;
 
 	@Column(name = "orchestra_id")
 	private int orchestra_id;
