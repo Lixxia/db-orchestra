@@ -32,4 +32,21 @@ public class Brass extends Model {
     @OneToOne
     @JoinColumn(name = "player_id", referencedColumnName = "id")
 	private Players myPlayer;
+
+
+	public static Finder<int,Brass> find = new Finder(
+		int.class, Brass.class
+	);
+	//CRUD operations
+	public static List<Brass> all() {
+		return find.all();
+	}
+
+	public static void create(Brass brass) {
+		brass.save();
+	}
+
+	public static void delete(int id) {
+		find.ref(id).delete();
+	}
 }
