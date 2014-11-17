@@ -32,4 +32,49 @@ public class SymphonicString extends Model {
     @OneToOne
     @JoinColumn(name = "player_id", referencedColumnName = "id")
 	private Players myPlayer;
+
+	public static Finder<Integer,SymphonicString> find = new Finder(
+		Integer.class, SymphonicString.class
+	);
+
+	//CRUD operations
+	public static List<SymphonicString> all() {
+		return find.all();
+	}
+
+	public static void create(SymphonicString symphonicstring) {
+		symphonicstring.save();
+	}
+
+	public static void update(int id) {
+		find.ref(id).update();
+	}
+
+	public static void delete(int id) {
+		find.ref(id).delete();
+	}
+
+	//getters
+	public int getId() {
+		return this.id;
+	}
+
+	public String getInstrument() {
+		return this.instrument;
+	}
+
+	public String getSection() {
+		return this.section;
+	}
+
+	public int getSeat() {
+		return this.seat;
+	}
+	public String getClef() {
+		return this.clef;
+	}
+
+	public int getPlayer() {
+		return this.player_id;
+	}
 }

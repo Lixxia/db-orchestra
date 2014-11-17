@@ -27,4 +27,42 @@ public class Woodwind extends Model {
     @JoinColumn(name = "player_id", referencedColumnName = "id")
 	private Players myPlayer;
 
+	public static Finder<Integer,Woodwind> find = new Finder(
+		Integer.class, Woodwind.class
+	);
+
+	//CRUD operations
+	public static List<Woodwind> all() {
+		return find.all();
+	}
+
+	public static void create(Woodwind woodwind) {
+		woodwind.save();
+	}
+
+	public static void update(int id) {
+		find.ref(id).update();
+	}
+
+	public static void delete(int id) {
+		find.ref(id).delete();
+	}
+
+	//getters
+	public int getId() {
+		return this.id;
+	}
+
+	public String getInstrument() {
+		return this.instrument;
+	}
+
+	public String getClef() {
+		return this.clef;
+	}
+
+	public int getPlayer() {
+		return this.player_id;
+	}
+
 }

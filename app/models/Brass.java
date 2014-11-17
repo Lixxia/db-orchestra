@@ -33,10 +33,10 @@ public class Brass extends Model {
     @JoinColumn(name = "player_id", referencedColumnName = "id")
 	private Players myPlayer;
 
-
-	public static Finder<int,Brass> find = new Finder(
-		int.class, Brass.class
+	public static Finder<Integer,Brass> find = new Finder(
+		Integer.class, Brass.class
 	);
+
 	//CRUD operations
 	public static List<Brass> all() {
 		return find.all();
@@ -46,7 +46,36 @@ public class Brass extends Model {
 		brass.save();
 	}
 
+	public static void update(int id) {
+		find.ref(id).update();
+	}
+
 	public static void delete(int id) {
 		find.ref(id).delete();
+	}
+
+	//getters
+	public int getId() {
+		return this.id;
+	}
+
+	public String getInstrument() {
+		return this.instrument;
+	}
+
+	public String getKey() {
+		return this.instrument_key;
+	}
+
+	public String getClef() {
+		return this.clef;
+	}
+
+	public int getSeat() {
+		return this.seat;
+	}
+
+	public int getPlayer() {
+		return this.player_id;
 	}
 }

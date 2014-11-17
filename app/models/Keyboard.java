@@ -26,4 +26,42 @@ public class Keyboard extends Model {
     @OneToOne
     @JoinColumn(name = "player_id", referencedColumnName = "id")
 	private Players myPlayer;
+
+	public static Finder<Integer,Keyboard> find = new Finder(
+		Integer.class, Keyboard.class
+	);
+
+	//CRUD operations
+	public static List<Keyboard> all() {
+		return find.all();
+	}
+
+	public static void create(Keyboard keyboard) {
+		keyboard.save();
+	}
+
+	public static void update(int id) {
+		find.ref(id).update();
+	}
+
+	public static void delete(int id) {
+		find.ref(id).delete();
+	}
+
+	//getters
+	public int getId() {
+		return this.id;
+	}
+
+	public String getInstrument() {
+		return this.instrument;
+	}
+
+	public String getClef() {
+		return this.clef;
+	}
+
+	public int getPlayer() {
+		return this.player_id;
+	}
 }

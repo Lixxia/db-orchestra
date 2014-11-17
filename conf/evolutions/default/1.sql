@@ -23,10 +23,10 @@ create table Keyboard (
 
 create table Orchestra (
   id                        integer auto_increment not null,
+  name                      varchar(255),
   type                      varchar(255),
   num_players               integer,
   style                     varchar(255),
-  player_id                 integer,
   constraint pk_Orchestra primary key (id))
 ;
 
@@ -70,10 +70,10 @@ alter table Brass add constraint fk_Brass_myPlayer_1 foreign key (player_id) ref
 create index ix_Brass_myPlayer_1 on Brass (player_id);
 alter table Keyboard add constraint fk_Keyboard_myPlayer_2 foreign key (player_id) references Players (id) on delete restrict on update restrict;
 create index ix_Keyboard_myPlayer_2 on Keyboard (player_id);
-alter table Orchestra add constraint fk_Orchestra_myPlayer_3 foreign key (player_id) references Players (id) on delete restrict on update restrict;
-create index ix_Orchestra_myPlayer_3 on Orchestra (player_id);
-alter table Percussion add constraint fk_Percussion_myPlayer_4 foreign key (player_id) references Players (id) on delete restrict on update restrict;
-create index ix_Percussion_myPlayer_4 on Percussion (player_id);
+alter table Percussion add constraint fk_Percussion_myPlayer_3 foreign key (player_id) references Players (id) on delete restrict on update restrict;
+create index ix_Percussion_myPlayer_3 on Percussion (player_id);
+alter table Players add constraint fk_Players_myPlayer_4 foreign key (orchestra_id) references Players (id) on delete restrict on update restrict;
+create index ix_Players_myPlayer_4 on Players (orchestra_id);
 alter table SymphonicString add constraint fk_SymphonicString_myPlayer_5 foreign key (player_id) references Players (id) on delete restrict on update restrict;
 create index ix_SymphonicString_myPlayer_5 on SymphonicString (player_id);
 alter table Woodwind add constraint fk_Woodwind_myPlayer_6 foreign key (player_id) references Players (id) on delete restrict on update restrict;

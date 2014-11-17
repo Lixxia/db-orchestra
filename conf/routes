@@ -5,10 +5,19 @@
 # Home page
 GET     /                           controllers.Application.index()
 
+# Table Pages
+GET 	/players 					controllers.Application.players()
+GET 	/orchestra					controllers.Application.orchestra()	
+GET 	/brass						controllers.Application.brass()
+GET		/woodwind					controllers.Application.woodwind()
+GET 	/keyboard					controllers.Application.keyboard()
+GET 	/percussion					controllers.Application.percussion()
+GET		/symphonicstring			controllers.Application.symphonicstring()
+
 # Database Interactions
-POST	/:name/add					controllers.Application.addRow(name: string)
-POST	/:id/update					controllers.Application.updateRow(id: int)
-POST	/:id/delete					controllers.Application.deleteRow(id: int)
+POST	/:name/add					controllers.Application.addRow(name: String)
+POST	/:id/update					controllers.Application.updateRow(id: Int)
+POST	/delete/:id					controllers.Application.deleteRow(id: Int)
 
 # Map static resources from the /public folder to the /assets URL path
 GET     /assets/*file               controllers.Assets.at(path="/public", file)
