@@ -3,10 +3,11 @@
 @import helper._
 
 @main("Symphonic String Table") {
-
-	<hgroup>
-		<h1>Symphonic Strings</h1>
-	</hgroup>
+	<div class="page-header">
+		<h1>Symphonic Strings
+		<small>contains all stringed instruments.</small>
+		</h1>
+	</div>
 		<table class="table table-hover">
 		<tr>
 			<th>ID</th>
@@ -15,6 +16,8 @@
 			<th>Seat</th>
 			<th>Clef</th>
 			<th>Player ID</th>
+			<th>Delete Row</th>
+			<th>Update Row</th>
 		</tr>
 		@for(string <- strings) {
 			<tr>
@@ -24,6 +27,11 @@
 			<td>@string.getSeat()</td>
 			<td>@string.getClef()</td>
 			<td>@string.getPlayer()</td>
+			<td>
+			@form(routes.Application.deleteRow("SymphonicString",string.getId())) {
+				<input type="submit" value="Delete" class="btn btn-danger">
+				}
+			</td>
 			</tr>
 		}
 		</table>

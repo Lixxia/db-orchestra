@@ -3,16 +3,19 @@
 @import helper._
 
 @main("Percussion Table") {
-
-	<hgroup>
-		<h1>Percussion</h1>
-	</hgroup>
+	<div class="page-header">
+		<h1>Percussion
+		<small>contains all percussion instruments.</small>
+		</h1>
+	</div>
 		<table class="table table-hover">
 		<tr>
 			<th>ID</th>
 			<th>Instrument</th>
 			<th>Type</th>
 			<th>Player ID</th>
+			<th>Delete Row</th>
+			<th>Update Row</th>
 		</tr>
 		@for(percussion <- percussions) {
 			<tr>
@@ -20,6 +23,11 @@
 			<td>@percussion.getInstrument()</td>
 			<td>@percussion.getType()</td>
 			<td>@percussion.getPlayer()</td>
+			<td>
+			@form(routes.Application.deleteRow("Percussion",percussion.getId())) {
+				<input type="submit" value="Delete" class="btn btn-danger">
+				}
+			</td>
 			</tr>
 		}
 		</table>

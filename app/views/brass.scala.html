@@ -3,10 +3,11 @@
 @import helper._
 
 @main("Brass Table") {
-
-	<hgroup>
-		<h1>Brass</h1>
-	</hgroup>
+	<div class="page-header">
+		<h1>Brass
+		<small>contains all brass instruments.</small>
+		</h1>
+	</div>
 		<table class="table table-hover">
 		<tr>
 			<th>ID</th>
@@ -15,6 +16,8 @@
 			<th>Clef</th>
 			<th>Seat</th>
 			<th>Player ID</th>
+			<th>Delete Row</th>
+			<th>Update Row</th>
 		</tr>
 		@for(br <- brass) {
 			<tr>
@@ -24,6 +27,12 @@
 			<td>@br.getClef()</td>
 			<td>@br.getSeat()</td>
 			<td>@br.getPlayer()</td>
+			<td>
+			@form(routes.Application.deleteRow("Brass",br.getId())) {
+				<input type="submit" value="Delete" class="btn btn-danger">
+				}
+			</td>
+			
 			</tr>
 		}
 		</table>

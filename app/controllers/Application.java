@@ -4,6 +4,7 @@ import play.*;
 import play.mvc.*;
 import play.data.*;
 import static play.data.Form.*;
+import static play.data.Form.form;
 
 import models.*;
 
@@ -16,6 +17,16 @@ public class Application extends Controller {
         	Orchestra.find.all(),
         	Players.find.all()
         ));
+    }
+
+    public static Result update() {
+    	Form<Players> playerForm = form(Players.class).bindFromRequest();
+    	if (playerForm.hasErrors()) {
+    		return badRequest(views.html.update.render(playerForm));
+    	}
+    	playerForm.get().save();
+    	flash("Success");
+    	return redirect(routes.Application.players());
     }
 
     //Controllers for each table
@@ -65,13 +76,33 @@ public class Application extends Controller {
     	return TODO;
     }
 
-    public static Result updateRow(int id) {
+    public static Result updateRow(String name, int id) {
     	return TODO;
     }
 
-    public static Result deleteRow(int id) {
-    	Players.delete(id);
-    	return redirect(routes.Application.index());
+    public static Result deleteRow(String name, int id) {
+    	if(name.equals("Players")) {
+    		Players.delete(id);
+    	}
+    	else if(name.equals("Orchestra")) {
+    		Orchestra.delete(id);
+    	}
+    	else if(name.equals("Brass")) {
+    		Brass.delete(id);
+    	}
+    	else if(name.equals("Keyboard")) {
+    		Keyboard.delete(id);
+    	}
+    	else if(name.equals("Percussion")) {
+    		Percussion.delete(id);
+    	}
+    	else if(name.equals("SymphonicString")) {
+    		SymphonicString.delete(id);
+    	}
+    	else if(name.equals("Woodwind")) {
+    		Woodwind.delete(id);
+    	}
+    	return redirect(routes.Application.players());
     }
 
 }

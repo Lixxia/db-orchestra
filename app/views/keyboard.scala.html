@@ -3,16 +3,19 @@
 @import helper._
 
 @main("Keyboard Table") {
-
-	<hgroup>
-		<h1>Keyboard</h1>
-	</hgroup>
+	<div class="page-header">
+		<h1>Keyboard
+		<small>contains all keyboard instruments.</small>
+		</h1>
+	</div>
 		<table class="table table-hover">
 		<tr>
 			<th>ID</th>
 			<th>Instrument</th>
 			<th>Clef</th>
 			<th>Player ID</th>
+			<th>Delete Row</th>
+			<th>Update Row</th>
 		</tr>
 		@for(keyboard <- Keyboards) {
 			<tr>
@@ -20,6 +23,11 @@
 			<td>@keyboard.getInstrument()</td>
 			<td>@keyboard.getClef()</td>
 			<td>@keyboard.getPlayer()</td>
+			<td>
+			@form(routes.Application.deleteRow("Keyboard",keyboard.getId())) {
+				<input type="submit" value="Delete" class="btn btn-danger">
+				}
+			</td>
 			</tr>
 		}
 		</table>

@@ -1,5 +1,8 @@
 @(players: List[Players])
 
+
+@import helper._
+
 @main("Players") {
 	<div class="page-header">
 		<h1>Players
@@ -15,6 +18,7 @@
 			<th>Phome</th>
 			<th>Orchestra ID</th>
 			<th>Delete Row</th>
+			<th>Update Row</th>
 		</tr>
 		@for(player <- players) {
 			<tr>
@@ -24,7 +28,17 @@
 			<td>@player.getEmail()</td>
 			<td>@player.getPhone()</td>
 			<td>@player.getOrchestra()</td>
-			<td><button type="button" class="btn btn-default delete" href="#">Delete</button></td>
+			<td>
+			@form(routes.Application.deleteRow("Players",player.getId())) {
+				<input type="submit" value="Delete" class="btn btn-danger">
+				}
+			</td>
+			<td>
+			@form(routes.Application.update()) {
+				<input type="submit" value="Update" class="btn btn-success">
+			}
+			</td>
+			
 			</tr>
 		}
 		</table>

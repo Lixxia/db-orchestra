@@ -16,8 +16,9 @@ GET		/symphonicstring			controllers.Application.symphonicstring()
 
 # Database Interactions
 POST	/:name/add					controllers.Application.addRow(name: String)
-POST	/:id/update					controllers.Application.updateRow(id: Int)
-POST	/delete/:id					controllers.Application.deleteRow(id: Int)
+GET 	/update						controllers.Application.update()
+POST	/:name/:id/update			controllers.Application.updateRow(name: String,id: Int)
+POST	/:name/:id/delete			controllers.Application.deleteRow(name: String,id: Int)
 
 # Map static resources from the /public folder to the /assets URL path
 GET     /assets/*file               controllers.Assets.at(path="/public", file)
