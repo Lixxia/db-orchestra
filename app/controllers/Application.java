@@ -26,7 +26,7 @@ public class Application extends Controller {
     	}
     	playerForm.get().save();
     	flash("Success");
-    	return redirect(routes.Application.players());
+    	return redirect(routes.Application.update());
     }
 
     //Controllers for each table

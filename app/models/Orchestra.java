@@ -63,7 +63,7 @@ public class Orchestra extends Model {
 		return this.type;
 	}
 
-	public int getNum() {
+	public Integer getNum() {
 		return this.num_players;
 	}
 

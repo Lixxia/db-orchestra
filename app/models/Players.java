@@ -48,7 +48,7 @@ public class Players extends Model {
 
 	@ManyToOne
     @JoinColumn(name = "orchestra_id", referencedColumnName = "id")
-	private Players myPlayer;
+	private Orchestra myOrchestra;
 
 	public static Finder<Integer,Players> find = new Finder(
 		Integer.class, Players.class

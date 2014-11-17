@@ -30,7 +30,7 @@ public class Brass extends Model {
 	private int player_id;
 
     @OneToOne
-    @JoinColumn(name = "player_id", referencedColumnName = "id")
+    @JoinColumn(name = "player_id", referencedColumnName = "id", updatable = false, insertable = false)
 	private Players myPlayer;
 
 	public static Finder<Integer,Brass> find = new Finder(
