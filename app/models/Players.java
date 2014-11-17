@@ -43,9 +43,6 @@ public class Players extends Model {
 	@OneToOne(cascade = CascadeType.ALL, mappedBy = "myPlayer", fetch = FetchType.EAGER)
 	private SymphonicString mySymphonicString;
 
-	@Column(name = "orchestra_id")
-	private int orchestra_id;
-
 	@ManyToOne
     @JoinColumn(name = "orchestra_id", referencedColumnName = "id")
 	private Orchestra myOrchestra;
@@ -92,8 +89,8 @@ public class Players extends Model {
 		return this.telephone;
 	}
 
-	public int getOrchestra() {
-		return this.orchestra_id;
+	public Orchestra getOrchestra() {
+		return this.myOrchestra;
 	}
 
 	public Players(String first_name, String last_name) {

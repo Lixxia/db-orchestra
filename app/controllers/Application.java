@@ -20,13 +20,14 @@ public class Application extends Controller {
     }
 
     public static Result update() {
-    	Form<Players> playerForm = form(Players.class).bindFromRequest();
-    	if (playerForm.hasErrors()) {
-    		return badRequest(views.html.update.render(playerForm));
+    	Form<Orchestra> orchestraForm = form(Orchestra.class).bindFromRequest().get();
+    	if (orchestraForm.hasErrors()) {
+    		return badRequest(views.html.update.render(orchestraForm));
     	}
-    	playerForm.get().save();
+    	orchestraForm.get().save();
     	flash("Success");
-    	return redirect(routes.Application.update());
+        System.out.println((Controller.request().queryString()).toString());
+    	return ok(views.html.update.render(orchestraForm));
     }
 
     //Controllers for each table
@@ -83,26 +84,36 @@ public class Application extends Controller {
     public static Result deleteRow(String name, int id) {
     	if(name.equals("Players")) {
     		Players.delete(id);
+            return redirect(routes.Application.players());
     	}
     	else if(name.equals("Orchestra")) {
     		Orchestra.delete(id);
+            return redirect(routes.Application.orchestra());
     	}
     	else if(name.equals("Brass")) {
     		Brass.delete(id);
+            return redirect(routes.Application.brass());
     	}
     	else if(name.equals("Keyboard")) {
     		Keyboard.delete(id);
+            return redirect(routes.Application.keyboard());
     	}
     	else if(name.equals("Percussion")) {
     		Percussion.delete(id);
+            return redirect(routes.Application.percussion());
     	}
     	else if(name.equals("SymphonicString")) {
     		SymphonicString.delete(id);
+            return redirect(routes.Application.symphonicstring());
     	}
     	else if(name.equals("Woodwind")) {
     		Woodwind.delete(id);
+            return redirect(routes.Application.woodwind());
     	}
-    	return redirect(routes.Application.players());
+        else {
+            return redirect(routes.Application.index());
+        }
+    	
     }
 
 }

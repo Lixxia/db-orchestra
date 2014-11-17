@@ -1,4 +1,4 @@
-@(playerForm: Form[Players])
+@(orchestraForm: Form[Orchestra])
 
 @import helper._
 
@@ -6,16 +6,16 @@
 	
 	@form(routes.Application.update()) {
 	<fieldset>
-			@inputText(playerForm("first_name"), '_label -> "First Name")
-			@inputText(playerForm("last_name"), '_label -> "Last Name")
-			@inputText(playerForm("email"), '_label -> "Email")
-			@inputText(playerForm("telephone"), '_label -> "Phone")
-			@inputText(playerForm("orchestra_id"), '_label -> "Orchestra ID")
+			@inputText(orchestraForm("name"), '_label -> "Name")
+			@inputText(orchestraForm("type"), '_label -> "Type")
+			@inputText(orchestraForm("num_players"), '_label -> "Num Players")
+			@inputText(orchestraForm("style"), '_label -> "Style")
 	</fieldset>
 
 	<div class="actions">
 		<input type="submit" value="Save" class="btn btn-primary"> or
 		<a href="@routes.Application.index()" class="btn">Cancel</a>
+		
 	</div>
 	}
 }
