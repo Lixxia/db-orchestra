@@ -1,0 +1,26 @@
+@(Keyboards: List[Keyboard])
+
+@import helper._
+
+@main("Keyboard Table") {
+
+	<hgroup>
+		<h1>Keyboard</h1>
+	</hgroup>
+		<table class="table table-hover">
+		<tr>
+			<th>ID</th>
+			<th>Instrument</th>
+			<th>Clef</th>
+			<th>Player ID</th>
+		</tr>
+		@for(keyboard <- Keyboards) {
+			<tr>
+			<td>@keyboard.getId()</td>
+			<td>@keyboard.getInstrument()</td>
+			<td>@keyboard.getClef()</td>
+			<td>@keyboard.getPlayer()</td>
+			</tr>
+		}
+		</table>
+}

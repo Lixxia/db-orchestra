@@ -1,0 +1,20 @@
+id,instrument,type,player_id
+1,Timpani,Auxillary,13
+2,Timpani,Auxillary,74
+3,"Snare Drum",Auxillary,75
+4,"Tenor Drum",Auxillary,76
+5,"Bass Drum",Auxillary,77
+6,Cymbals,Auxillary,78
+7,"Tam-tam",Auxillary,79
+8,Triangle,Tuned,80
+9,Xylophone,Tuned,81
+10,Vibraphone,Tuned,82
+11,Timpani,Auxillary,188
+12,"Snare Drum",Auxillary,189
+13,"Tenor Drum",Auxillary,190
+14,"Bass Drum",Auxillary,191
+15,Cymbals,Auxillary,192
+16,"Tam-tam",Auxillary,193
+17,Triangle,Tuned,194
+18,Xylophone,Tuned,195
+19,Vibraphone,Tuned,196

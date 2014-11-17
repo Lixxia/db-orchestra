@@ -1,0 +1,147 @@
+id,instrument,section,seat,clef,player_id
+1,Violin,"First Violinists",1,Treble,14
+2,Violin,"First Violinists",2,Treble,15
+3,Violin,"First Violinists",3,Treble,16
+4,Violin,"First Violinists",4,Treble,17
+5,Violin,"First Violinists",5,Treble,18
+6,Violin,"Second Violinists",1,Treble,19
+7,Violin,"Second Violinists",2,Treble,20
+8,Violin,"Second Violinists",3,Treble,21
+9,Violin,"Second Violinists",4,Treble,22
+10,Violin,"Second Violinists",5,Treble,23
+11,Viola,"Violists",1,Alto,24
+12,Viola,"Violists",2,Alto,25
+13,Viola,"Violists",3,Alto,26
+14,Viola,"Violists",4,Alto,27
+15,Viola,"Violists",5,Alto,28
+16,Viola,"Violists",6,Alto,29
+17,Violoncello,"Cellists",1,Bass,30
+18,Violoncello,"Cellists",2,Bass,31
+19,Violoncello,"Cellists",3,Bass,32
+20,Violoncello,"Cellists",4,Bass,33
+21,"String Bass","Bassists",1,Bass,34
+22,Theorbo,"Lutes",1,Alto,35
+23,Harp,"Harpists",1,"Grand Staff",83
+24,Harp,"Harpists",2,"Grand Staff",84
+25,Violin,"First Violinists",1,Treble,86
+26,Violin,"First Violinists",2,Treble,87
+27,Violin,"First Violinists",3,Treble,88
+28,Violin,"First Violinists",4,Treble,89
+29,Violin,"First Violinists",5,Treble,90
+30,Violin,"First Violinists",6,Treble,91
+31,Violin,"First Violinists",7,Treble,92
+32,Violin,"First Violinists",8,Treble,93
+33,Violin,"First Violinists",9,Treble,94
+34,Violin,"First Violinists",10,Treble,95
+35,Violin,"First Violinists",11,Treble,96
+36,Violin,"First Violinists",12,Treble,97
+37,Violin,"First Violinists",13,Treble,98
+38,Violin,"First Violinists",14,Treble,99
+39,Violin,"First Violinists",15,Treble,100
+40,Violin,"First Violinists",16,Treble,101
+41,Violin,"Second Violinists",1,Treble,102
+42,Violin,"Second Violinists",2,Treble,103
+43,Violin,"Second Violinists",3,Treble,104
+44,Violin,"Second Violinists",4,Treble,105
+45,Violin,"Second Violinists",5,Treble,106
+46,Violin,"Second Violinists",6,Treble,107
+47,Violin,"Second Violinists",7,Treble,108
+48,Violin,"Second Violinists",8,Treble,109
+49,Violin,"Second Violinists",9,Treble,110
+50,Violin,"Second Violinists",10,Treble,111
+51,Violin,"Second Violinists",11,Treble,112
+52,Violin,"Second Violinists",12,Treble,113
+53,Violin,"Second Violinists",13,Treble,114
+54,Violin,"Second Violinists",14,Treble,115
+55,Viola,"Violists",1,Alto,116
+56,Viola,"Violists",2,Alto,117
+57,Viola,"Violists",3,Alto,118
+58,Viola,"Violists",4,Alto,119
+59,Viola,"Violists",5,Alto,120
+60,Viola,"Violists",6,Alto,121
+61,Viola,"Violists",7,Alto,122
+62,Viola,"Violists",8,Alto,123
+63,Viola,"Violists",9,Alto,124
+64,Viola,"Violists",10,Alto,125
+65,Viola,"Violists",11,Alto,126
+66,Viola,"Violists",12,Alto,127
+67,Cello,"Cellists",1,Bass,128
+68,Cello,"Cellists",2,Bass,129
+69,Cello,"Cellists",3,Bass,130
+70,Cello,"Cellists",4,Bass,131
+71,Cello,"Cellists",5,Bass,132
+72,Cello,"Cellists",6,Bass,133
+73,Cello,"Cellists",7,Bass,134
+74,Cello,"Cellists",8,Bass,135
+75,Cello,"Cellists",9,Bass,136
+76,Cello,"Cellists",10,Bass,137
+77,"Double Bass","Bassists",1,Bass,138
+78,"Double Bass","Bassists",2,Bass,139
+79,"Double Bass","Bassists",3,Bass,140
+80,"Double Bass","Bassists",4,Bass,141
+81,"Double Bass","Bassists",5,Bass,142
+82,"Double Bass","Bassists",6,Bass,143
+83,"Double Bass","Bassists",7,Bass,144
+84,"Double Bass","Bassists",8,Bass,145
+85,Harp,"Harpists",1,"Grand Staff",197
+86,Harp,"Harpists",2,"Grand Staff",198
+87,Violin,"First Violinists",1,Treble,199
+88,Violin,"First Violinists",2,Treble,200
+89,Violin,"First Violinists",3,Treble,201
+90,Violin,"First Violinists",4,Treble,202
+91,Violin,"First Violinists",5,Treble,203
+92,Violin,"First Violinists",6,Treble,204
+93,Violin,"First Violinists",7,Treble,205
+94,Violin,"First Violinists",8,Treble,206
+95,Violin,"First Violinists",9,Treble,207
+96,Violin,"First Violinists",10,Treble,208
+97,Violin,"First Violinists",11,Treble,209
+98,Violin,"First Violinists",12,Treble,210
+99,Violin,"First Violinists",13,Treble,211
+100,Violin,"First Violinists",14,Treble,212
+101,Violin,"First Violinists",15,Treble,213
+102,Violin,"First Violinists",16,Treble,214
+103,Violin,"Second Violinists",1,Treble,215
+104,Violin,"Second Violinists",2,Treble,216
+105,Violin,"Second Violinists",3,Treble,217
+106,Violin,"Second Violinists",4,Treble,218
+107,Violin,"Second Violinists",5,Treble,219
+108,Violin,"Second Violinists",6,Treble,220
+109,Violin,"Second Violinists",7,Treble,221
+110,Violin,"Second Violinists",8,Treble,222
+111,Violin,"Second Violinists",9,Treble,223
+112,Violin,"Second Violinists",10,Treble,224
+113,Violin,"Second Violinists",11,Treble,225
+114,Violin,"Second Violinists",12,Treble,226
+115,Violin,"Second Violinists",13,Treble,227
+116,Violin,"Second Violinists",14,Treble,228
+117,Viola,"Violists",1,Alto,229
+118,Viola,"Violists",2,Alto,230
+119,Viola,"Violists",3,Alto,231
+120,Viola,"Violists",4,Alto,232
+121,Viola,"Violists",5,Alto,233
+122,Viola,"Violists",6,Alto,234
+123,Viola,"Violists",7,Alto,235
+124,Viola,"Violists",8,Alto,236
+125,Viola,"Violists",9,Alto,237
+126,Viola,"Violists",10,Alto,238
+127,Viola,"Violists",11,Alto,239
+128,Viola,"Violists",12,Alto,240
+129,Cello,"Cellists",1,Bass,241
+130,Cello,"Cellists",2,Bass,242
+131,Cello,"Cellists",3,Bass,243
+132,Cello,"Cellists",4,Bass,244
+133,Cello,"Cellists",5,Bass,245
+134,Cello,"Cellists",6,Bass,246
+135,Cello,"Cellists",7,Bass,247
+136,Cello,"Cellists",8,Bass,248
+137,Cello,"Cellists",9,Bass,249
+138,Cello,"Cellists",10,Bass,250
+139,"Double Bass","Bassists",1,Bass,251
+140,"Double Bass","Bassists",2,Bass,252
+141,"Double Bass","Bassists",3,Bass,253
+142,"Double Bass","Bassists",4,Bass,254
+143,"Double Bass","Bassists",5,Bass,255
+144,"Double Bass","Bassists",6,Bass,256
+145,"Double Bass","Bassists",7,Bass,257
+146,"Double Bass","Bassists",8,Bass,258

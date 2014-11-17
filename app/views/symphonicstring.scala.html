@@ -1,0 +1,30 @@
+@(strings: List[SymphonicString])
+
+@import helper._
+
+@main("Symphonic String Table") {
+
+	<hgroup>
+		<h1>Symphonic Strings</h1>
+	</hgroup>
+		<table class="table table-hover">
+		<tr>
+			<th>ID</th>
+			<th>Instrument</th>
+			<th>Section</th>
+			<th>Seat</th>
+			<th>Clef</th>
+			<th>Player ID</th>
+		</tr>
+		@for(string <- strings) {
+			<tr>
+			<td>@string.getId()</td>
+			<td>@string.getInstrument()</td>
+			<td>@string.getSection()</td>
+			<td>@string.getSeat()</td>
+			<td>@string.getClef()</td>
+			<td>@string.getPlayer()</td>
+			</tr>
+		}
+		</table>
+}

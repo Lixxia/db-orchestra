@@ -1,0 +1,28 @@
+@(orchestra: List[Orchestra])
+
+@import helper._
+
+@main("Orchestra Table") {
+
+	<hgroup>
+		<h1>Orchestra</h1>
+	</hgroup>
+		<table class="table table-hover">
+		<tr>
+			<th>ID</th>
+			<th>Name</th>
+			<th>Type</th>
+			<th>Num Players</th>
+			<th>Style</th>
+		</tr>
+		@for(orch <- orchestra) {
+			<tr>
+			<td>@orch.getId()</td>
+			<td>@orch.getName()</td>
+			<td>@orch.getType()</td>
+			<td>@orch.getNum()</td>
+			<td>@orch.getStyle()</td>
+			</tr>
+		}
+		</table>
+}

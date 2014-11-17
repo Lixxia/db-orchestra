@@ -1,0 +1,6 @@
+id,instrument,clef,player_id
+1,Harpsichord,Treble,12
+2,Piano,Treble,71
+3,Celesta,"Grand Staff",72
+4,"Pipe Organ","Grand Staff",73
+5,Piano,Treble,187

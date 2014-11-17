@@ -1,0 +1,42 @@
+id,instrument,instrument_key,clef,seat,player_id
+1,Horn,F,Bass,1,1
+2,Horn,F,Bass,2,2
+3,Trumpet,B♭,Treble,3,3
+4,Trumpet,B♭,Treble,4,4
+5,"French Horn",F,Bass,1,36
+6,"French Horn",F,Bass,2,37
+7,"French Horn",F,Bass,3,38
+8,"French Horn",F,Bass,4,39
+9,"French Horn",F,Bass,5,40
+10,"French Horn",F,Bass,6,41
+11,"French Horn",F,Bass,7,42
+12,Trumpet,B♭,Treble,1,43
+13,Trumpet,B♭,Treble,2,44
+14,Trumpet,B♭,Treble,3,45
+15,Trumpet,B♭,Treble,4,46
+16,Trumpet,B♭,Treble,5,47
+17,Trombone,B♭,Tenor,1,48
+18,Trombone,B♭,Tenor,2,49
+19,Trombone,B♭,Tenor,3,50
+20,Trombone,B♭,Tenor,4,51
+21,Tuba,F,Bass,1,52
+22,Tuba,C,Bass,2,53
+23,Tuba,B♭,Bass,3,54
+24,"French Horn",F,Bass,1,146
+25,"French Horn",F,Bass,2,147
+26,"French Horn",F,Bass,3,148
+27,"French Horn",F,Bass,4,149
+28,"French Horn",F,Bass,5,150
+29,"French Horn",F,Bass,6,160
+30,"French Horn",F,Bass,7,161
+31,Trumpet,B♭,Treble,1,162
+32,Trumpet,B♭,Treble,2,163
+33,Trumpet,B♭,Treble,3,164
+34,Trumpet,B♭,Treble,4,165
+35,Trumpet,B♭,Treble,5,166
+36,Trombone,B♭,Tenor,1,167
+37,Trombone,B♭,Tenor,2,168
+38,Trombone,B♭,Tenor,3,169
+39,Trombone,B♭,Tenor,4,170
+40,Tuba,F,Bass,1,171
+41,Tuba,C,Bass,2,172

@@ -1,0 +1,26 @@
+@(woodwinds: List[Woodwind])
+
+@import helper._
+
+@main("Woodwind Table") {
+
+	<hgroup>
+		<h1>Woodwind</h1>
+	</hgroup>
+		<table class="table table-hover">
+		<tr>
+			<th>ID</th>
+			<th>Instrument</th>
+			<th>Clef</th>
+			<th>Player ID</th>
+		</tr>
+		@for(woodwind <- woodwinds) {
+			<tr>
+			<td>@woodwind.getId()</td>
+			<td>@woodwind.getInstrument()</td>
+			<td>@woodwind.getClef()</td>
+			<td>@woodwind.getPlayer()</td>
+			</tr>
+		}
+		</table>
+}

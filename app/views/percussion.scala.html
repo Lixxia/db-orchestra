@@ -1,0 +1,26 @@
+@(percussions: List[Percussion])
+
+@import helper._
+
+@main("Percussion Table") {
+
+	<hgroup>
+		<h1>Percussion</h1>
+	</hgroup>
+		<table class="table table-hover">
+		<tr>
+			<th>ID</th>
+			<th>Instrument</th>
+			<th>Type</th>
+			<th>Player ID</th>
+		</tr>
+		@for(percussion <- percussions) {
+			<tr>
+			<td>@percussion.getId()</td>
+			<td>@percussion.getInstrument()</td>
+			<td>@percussion.getType()</td>
+			<td>@percussion.getPlayer()</td>
+			</tr>
+		}
+		</table>
+}

@@ -1,0 +1,31 @@
+@(players: List[Players])
+
+@main("Players") {
+	<div class="page-header">
+		<h1>Players
+		<small>contains all player information.</small>
+		</h1>
+	</div>
+		<table class="table table-hover">
+		<tr>
+			<th>ID</th>
+			<th>First Name</th>
+			<th>Last Name</th>
+			<th>Email</th>
+			<th>Phome</th>
+			<th>Orchestra ID</th>
+			<th>Delete Row</th>
+		</tr>
+		@for(player <- players) {
+			<tr>
+			<td>@player.getId()</td>
+			<td>@player.getFirst()</td>
+			<td>@player.getLast()</td>
+			<td>@player.getEmail()</td>
+			<td>@player.getPhone()</td>
+			<td>@player.getOrchestra()</td>
+			<td><button type="button" class="btn btn-default delete" href="#">Delete</button></td>
+			</tr>
+		}
+		</table>
+}

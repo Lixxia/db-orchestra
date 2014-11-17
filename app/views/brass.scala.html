@@ -1,0 +1,30 @@
+@(brass: List[Brass])
+
+@import helper._
+
+@main("Brass Table") {
+
+	<hgroup>
+		<h1>Brass</h1>
+	</hgroup>
+		<table class="table table-hover">
+		<tr>
+			<th>ID</th>
+			<th>Instrument</th>
+			<th>Key</th>
+			<th>Clef</th>
+			<th>Seat</th>
+			<th>Player ID</th>
+		</tr>
+		@for(br <- brass) {
+			<tr>
+			<td>@br.getId()</td>
+			<td>@br.getInstrument()</td>
+			<td>@br.getKey()</td>
+			<td>@br.getClef()</td>
+			<td>@br.getSeat()</td>
+			<td>@br.getPlayer()</td>
+			</tr>
+		}
+		</table>
+}
