@@ -97,6 +97,10 @@ public class Players extends Model {
 		this.myOrchestra = Orchestra.find.byId(orchestra_id);
 	}
 
+	public void setId(int id) {
+		this.id = id;
+	}
+
 	public Players(String first_name, String last_name) {
 		this.first_name = first_name;
 		this.last_name = last_name;

@@ -3,60 +3,66 @@
 # ~~~~
 
 # Home page
-GET     /                           controllers.Application.index()
+GET     /                           	controllers.Application.index()
 
 # Redirect
-POST 	/redirect					controllers.Application.createForm(name: String)
+POST 	/redirect						controllers.Application.createForm(name: String)
 
 # Orchestra Interactions and Display
-GET		/orchestra   				controllers.OrchestraControl.orchestra()
-GET		/orchestra/create  			controllers.OrchestraControl.createForm()
-POST    /orchestra/save 			controllers.OrchestraControl.save()
-POST    /orchestra/:id/delete 		controllers.OrchestraControl.delete(id: Int)
-GET     /orchestra/:id/update   	controllers.OrchestraControl.createUpdateForm(id: Int)
-POST	/orchestra/:id/updateSave	controllers.OrchestraControl.update(id: Int)
+GET		/orchestra   					controllers.OrchestraControl.orchestra()
+GET		/orchestra/create  				controllers.OrchestraControl.createForm()
+POST    /orchestra/save 				controllers.OrchestraControl.save()
+POST    /orchestra/:id/delete 			controllers.OrchestraControl.delete(id: Int)
+GET     /orchestra/:id/update   		controllers.OrchestraControl.createUpdateForm(id: Int)
+POST	/orchestra/:id/updateSave		controllers.OrchestraControl.update(id: Int)
 
 # Player Interactions and Display
-GET		/players   					controllers.PlayersControl.players()
-GET 	/players/create 			controllers.PlayersControl.createForm()
-POST    /players/save 				controllers.PlayersControl.save()
-POST    /players/:id/delete 		controllers.PlayersControl.delete(id: Int)
-POST    /players/:id/update   		controllers.PlayersControl.update(id: Int)
+GET		/players   						controllers.PlayersControl.players()
+GET 	/players/create 				controllers.PlayersControl.createForm()
+POST    /players/save 					controllers.PlayersControl.save()
+POST    /players/:id/delete 			controllers.PlayersControl.delete(id: Int)
+GET     /players/:id/update   			controllers.PlayersControl.createUpdateForm(id: Int)
+POST	/players/:id/updateSave			controllers.PlayersControl.update(id: Int)
 
 # Brass Interactions and Display
-GET		/brass   					controllers.BrassControl.brass()
-GET     /brass/create  				controllers.BrassControl.createForm()
-POST    /brass/save 				controllers.BrassControl.save()
-POST    /brass/:id/delete 			controllers.BrassControl.delete(id: Int)
-POST    /brass/:id/update   		controllers.BrassControl.update(id: Int)
+GET		/brass   						controllers.BrassControl.brass()
+GET     /brass/create  					controllers.BrassControl.createForm()
+POST    /brass/save 					controllers.BrassControl.save()
+POST    /brass/:id/delete 				controllers.BrassControl.delete(id: Int)
+GET     /brass/:id/update   			controllers.BrassControl.createUpdateForm(id: Int)
+POST	/brass/:id/updateSave			controllers.BrassControl.update(id: Int)
 
 # Woodwind Interactions and Display
-GET		/woodwind   				controllers.WoodwindControl.woodwind()
-GET		/woodwind/create  			controllers.WoodwindControl.createForm()
-POST    /woodwind/save 				controllers.WoodwindControl.save()
-POST    /woodwind/:id/delete 		controllers.WoodwindControl.delete(id: Int)
-POST    /woodwind/:id/update   		controllers.WoodwindControl.update(id: Int)
+GET		/woodwind   					controllers.WoodwindControl.woodwind()
+GET		/woodwind/create  				controllers.WoodwindControl.createForm()
+POST    /woodwind/save 					controllers.WoodwindControl.save()
+POST    /woodwind/:id/delete 			controllers.WoodwindControl.delete(id: Int)
+GET     /woodwind/:id/update   			controllers.WoodwindControl.createUpdateForm(id: Int)
+POST	/woodwind/:id/updateSave		controllers.WoodwindControl.update(id: Int)
 
 # Keyboard Interactions and Display
-GET		/keyboard   				controllers.KeyboardControl.keyboard()
-GET		/keyboard/create  			controllers.KeyboardControl.createForm()
-POST    /keyboard/save 				controllers.KeyboardControl.save()
-POST    /keyboard/:id/delete 		controllers.KeyboardControl.delete(id: Int)
-POST    /keyboard/:id/update   		controllers.KeyboardControl.update(id: Int)
+GET		/keyboard   					controllers.KeyboardControl.keyboard()
+GET		/keyboard/create  				controllers.KeyboardControl.createForm()
+POST    /keyboard/save 					controllers.KeyboardControl.save()
+POST    /keyboard/:id/delete 			controllers.KeyboardControl.delete(id: Int)
+GET     /keyboard/:id/update   			controllers.KeyboardControl.createUpdateForm(id: Int)
+POST	/keyboard/:id/updateSave		controllers.KeyboardControl.update(id: Int)
 
 # Percussion Interactions and Display
-GET		/percussion   				controllers.PercussionControl.percussion()
-GET		/percussion/create  		controllers.PercussionControl.createForm()
-POST    /percussion/save 			controllers.PercussionControl.save()
-POST    /percussion/:id/delete 		controllers.PercussionControl.delete(id: Int)
-POST    /percussion/:id/update   	controllers.PercussionControl.update(id: Int)
+GET		/percussion   					controllers.PercussionControl.percussion()
+GET		/percussion/create  			controllers.PercussionControl.createForm()
+POST    /percussion/save 				controllers.PercussionControl.save()
+POST    /percussion/:id/delete 			controllers.PercussionControl.delete(id: Int)
+GET     /percussion/:id/update   		controllers.PercussionControl.createUpdateForm(id: Int)
+POST	/percussion/:id/updateSave		controllers.PercussionControl.update(id: Int)
 
 # Symphonic String Interactions and Display
-GET		/symphonicstring   			controllers.SymphStringControl.symphonicstring()
-GET		/symphonicstring/create  	controllers.SymphStringControl.createForm()
-POST    /symphonicstring/save 		controllers.SymphStringControl.save()
-POST    /symphonicstring/:id/delete controllers.SymphStringControl.delete(id: Int)
-POST    /symphonicstring/:id/update controllers.SymphStringControl.update(id: Int)
+GET		/symphonicstring   				controllers.SymphStringControl.symphonicstring()
+GET		/symphonicstring/create  		controllers.SymphStringControl.createForm()
+POST    /symphonicstring/save 			controllers.SymphStringControl.save()
+POST    /symphonicstring/:id/delete 	controllers.SymphStringControl.delete(id: Int)
+GET     /symphonicstring/:id/update   	controllers.SymphStringControl.createUpdateForm(id: Int)
+POST	/symphonicstring/:id/updateSave	controllers.SymphStringControl.update(id: Int)
 
 # Map static resources from the /public folder to the /assets URL path
 GET     /assets/*file               controllers.Assets.at(path="/public", file)

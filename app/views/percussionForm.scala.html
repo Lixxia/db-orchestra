@@ -1,11 +1,10 @@
 @(percussionForm: Form[Percussion])
 
 @import helper._
-@import helper.twitterBootstrap._
 
 @main("Update") {
 	<div class="header-pad">
-		@form(routes.WoodwindControl.save()) {
+		@form(routes.PercussionControl.save()) {
 		<fieldset>
 				@inputText(percussionForm("instrument"), '_label -> "Instrument")
 				@inputText(percussionForm("type"), '_label -> "Type")

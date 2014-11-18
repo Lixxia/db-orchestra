@@ -1,11 +1,10 @@
 @(brassForm: Form[Brass])
 
 @import helper._
-@import helper.twitterBootstrap._
 
 @main("Update") {
 	<div class="header-pad">
-		@form(routes.WoodwindControl.save()) {
+		@form(routes.BrassControl.save()) {
 		<fieldset>
 				@inputText(brassForm("instrument"), '_label -> "Instrument")
 				@inputText(brassForm("instrument_key"), '_label -> "Key")

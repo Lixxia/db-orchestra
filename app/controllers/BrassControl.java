@@ -27,14 +27,27 @@ public class BrassControl extends Controller {
     	return redirect(routes.BrassControl.brass());
     }
 
+    public static Result createUpdateForm(int id) {
+        Form<Brass> brassUpdateForm = form(Brass.class).fill(Brass.find.byId(id));
+        return ok(views.html.brassUpdateForm.render(brassUpdateForm));
+    }
+
+    public static Result update(int id) {
+        Form<Brass> brassUpdateForm = form(Brass.class).fill(Brass.find.byId(id)).bindFromRequest();
+        if (brassUpdateForm.hasErrors()) {
+            return badRequest(views.html.brassUpdateForm.render(brassUpdateForm));
+        }
+        Brass updateBrass = brassUpdateForm.get();
+        updateBrass.setId(id);
+        // Ebean.update(updateBrass);
+        updateBrass.update();
+        return redirect(routes.BrassControl.brass());
+    }
+
     public static Result brass() {
     	return ok(brass.render(
     		Brass.find.all()
     	));
-    }
-
-    public static Result update(int id) {
-    	return TODO;
     }
 
     public static Result delete(int id) {

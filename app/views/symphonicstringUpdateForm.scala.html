@@ -1,0 +1,22 @@
+@(symphonicstringUpdateForm: Form[SymphonicString])
+
+@import helper._
+
+@main("Update") {
+	<div class="header-pad">
+		@form(routes.SymphStringControl.update(1)) {
+		<fieldset>
+				@inputText(symphonicstringUpdateForm("instrument"), '_label -> "Instrument")
+				@inputText(symphonicstringUpdateForm("section"), '_label -> "Section")
+				@inputText(symphonicstringUpdateForm("seat"), '_label -> "Seat")
+				@inputText(symphonicstringUpdateForm("clef"), '_label -> "Clef")
+				@inputText(symphonicstringUpdateForm("player_id"), '_label -> "Player Id")
+		</fieldset>
+
+		<div class="actions">
+			<input type="submit" value="Save" class="btn btn-primary"> or
+			<a href="@routes.Application.index()" class="btn">Cancel</a>
+		</div>
+		}
+	</div>
+}

@@ -1,0 +1,20 @@
+@(percussionUpdateForm: Form[Percussion])
+
+@import helper._
+
+@main("Update") {
+	<div class="header-pad">
+		@form(routes.PercussionControl.update(1)) {
+		<fieldset>
+				@inputText(percussionUpdateForm("instrument"), '_label -> "Instrument")
+				@inputText(percussionUpdateForm("type"), '_label -> "Type")
+				@inputText(percussionUpdateForm("player_id"), '_label -> "Player Id")
+		</fieldset>
+
+		<div class="actions">
+			<input type="submit" value="Save" class="btn btn-primary"> or
+			<a href="@routes.Application.index()" class="btn">Cancel</a>
+		</div>
+		}
+	</div>
+}

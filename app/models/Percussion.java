@@ -65,4 +65,8 @@ public class Percussion extends Model {
 		return this.player_id;
 	}
 
+	public void setId(int id) {
+		this.id = id;
+	}
+
 }

@@ -70,4 +70,8 @@ public class Orchestra extends Model {
 	public String getStyle() {
 		return this.style;
 	}
+
+	public void setId(int id) {
+		this.id = id;
+	}
 }

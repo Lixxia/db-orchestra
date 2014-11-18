@@ -1,0 +1,23 @@
+@(brassUpdateForm: Form[Brass])
+
+@import helper._
+
+@main("Update") {
+	<div class="header-pad">
+		@id
+		@form(routes.BrassControl.update(1)) {
+		<fieldset>
+				@inputText(brassUpdateForm("instrument"), '_label -> "Instrument")
+				@inputText(brassUpdateForm("instrument_key"), '_label -> "Key")
+				@inputText(brassUpdateForm("clef"), '_label -> "Clef")
+				@inputText(brassUpdateForm("seat"), '_label -> "Seat")
+				@inputText(brassUpdateForm("player_id"), '_label -> "Player Id")
+		</fieldset>
+
+		<div class="actions">
+			<input type="submit" value="Save" class="btn btn-primary"> or
+			<a href="@routes.Application.index()" class="btn">Cancel</a>
+		</div>
+		}
+	</div>
+}

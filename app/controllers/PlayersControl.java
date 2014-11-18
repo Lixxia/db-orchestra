@@ -27,14 +27,27 @@ public class PlayersControl extends Controller {
     	return redirect(routes.PlayersControl.players());
     }
 
+    public static Result createUpdateForm(int id) {
+        Form<Players> playersUpdateForm = form(Players.class).fill(Players.find.byId(id));
+        return ok(views.html.playersUpdateForm.render(playersUpdateForm));
+    }
+
+    public static Result update(int id) {
+        Form<Players> playersUpdateForm = form(Players.class).fill(Players.find.byId(id)).bindFromRequest();
+        if (playersUpdateForm.hasErrors()) {
+            return badRequest(views.html.playersUpdateForm.render(playersUpdateForm));
+        }
+        Players updatePlayers = playersUpdateForm.get();
+        updatePlayers.setId(id);
+        // Ebean.update(updatePlayers);
+        updatePlayers.update();
+        return redirect(routes.PlayersControl.players());
+    }
+
     public static Result players() {
     	return ok(players.render(
     		Players.find.all()
     	));
-    }
-
-    public static Result update(int id) {
-    	return TODO;
     }
 
     public static Result delete(int id) {

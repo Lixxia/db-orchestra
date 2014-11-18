@@ -27,14 +27,27 @@ public class PercussionControl extends Controller {
     	return redirect(routes.PercussionControl.percussion());
     }
 
+    public static Result createUpdateForm(int id) {
+        Form<Percussion> percussionUpdateForm = form(Percussion.class).fill(Percussion.find.byId(id));
+        return ok(views.html.percussionUpdateForm.render(percussionUpdateForm));
+    }
+
+    public static Result update(int id) {
+        Form<Percussion> percussionUpdateForm = form(Percussion.class).fill(Percussion.find.byId(id)).bindFromRequest();
+        if (percussionUpdateForm.hasErrors()) {
+            return badRequest(views.html.percussionUpdateForm.render(percussionUpdateForm));
+        }
+        Percussion updatePercussion = percussionUpdateForm.get();
+        updatePercussion.setId(id);
+        // Ebean.update(updatePercussion);
+        updatePercussion.update();
+        return redirect(routes.PercussionControl.percussion());
+    }
+
     public static Result percussion() {
     	return ok(percussion.render(
     		Percussion.find.all()
     	));
-    }
-
-    public static Result update(int id) {
-    	return TODO;
     }
 
     public static Result delete(int id) {

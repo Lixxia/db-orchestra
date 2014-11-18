@@ -1,11 +1,10 @@
 @(keyboardForm: Form[Keyboard])
 
 @import helper._
-@import helper.twitterBootstrap._
 
 @main("Update") {
 	<div class="header-pad">
-		@form(routes.WoodwindControl.save()) {
+		@form(routes.KeyboardControl.save()) {
 		<fieldset>
 				@inputText(keyboardForm("instrument"), '_label -> "Instrument")
 				@inputText(keyboardForm("clef"), '_label -> "Clef")

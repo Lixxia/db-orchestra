@@ -27,14 +27,27 @@ public class SymphStringControl extends Controller {
     	return redirect(routes.SymphStringControl.symphonicstring());
     }
 
+    public static Result createUpdateForm(int id) {
+        Form<SymphonicString> symphonicstringUpdateForm = form(SymphonicString.class).fill(SymphonicString.find.byId(id));
+        return ok(views.html.symphonicstringUpdateForm.render(symphonicstringUpdateForm));
+    }
+
+    public static Result update(int id) {
+        Form<SymphonicString> symphonicstringUpdateForm = form(SymphonicString.class).fill(SymphonicString.find.byId(id)).bindFromRequest();
+        if (symphonicstringUpdateForm.hasErrors()) {
+            return badRequest(views.html.symphonicstringUpdateForm.render(symphonicstringUpdateForm));
+        }
+        SymphonicString updateSymphonicString = symphonicstringUpdateForm.get();
+        updateSymphonicString.setId(id);
+        // Ebean.update(updateSymphonicString);
+        updateSymphonicString.update();
+        return redirect(routes.SymphStringControl.symphonicstring());
+    }
+
     public static Result symphonicstring() {
     	return ok(symphonicstring.render(
     		SymphonicString.find.all()
     	));
-    }
-
-    public static Result update(int id) {
-    	return TODO;
     }
 
     public static Result delete(int id) {
