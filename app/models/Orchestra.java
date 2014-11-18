@@ -12,22 +12,22 @@ import play.data.validation.*;
 public class Orchestra extends Model {
 	@Id
 	@Column(name = "id")
-	private int id;
+	public int id;
 
 	@Column(name= "name")
-	private String name; 
+	public String name; 
 
 	@Column(name = "type")
-	private String type;
+	public String type;
 
 	@Column(name = "num_players")
-	private int num_players;
+	public int num_players;
 
 	@Column(name = "style")
-	private String style;
+	public String style;
 
     @OneToMany(cascade = CascadeType.ALL, mappedBy = "myPlayer", fetch = FetchType.EAGER)
-	private Players myPlayer;
+	public Players myPlayer;
 
 	public static Finder<Integer,Orchestra> find = new Finder(
 		Integer.class, Orchestra.class

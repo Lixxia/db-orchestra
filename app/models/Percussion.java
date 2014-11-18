@@ -12,20 +12,20 @@ import play.data.validation.*;
 public class Percussion extends Model {
 	@Id
 	@Column(name = "id")
-	private int id;
+	public int id;
 
 	@Column(name = "instrument")
-	private String instrument;
+	public String instrument;
 
 	@Column(name = "type")
-	private String type;
+	public String type;
 
 	@Column(name = "player_id")
-	private int player_id;
+	public int player_id;
 
     @OneToOne
     @JoinColumn(name = "player_id", referencedColumnName = "id")
-	private Players myPlayer;
+	public Players myPlayer;
 
 	public static Finder<Integer,Percussion> find = new Finder(
 		Integer.class, Percussion.class

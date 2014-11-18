@@ -1,7 +1,11 @@
-@(orchestra: List[Orchestra], players: List[Players])
-
-@import helper._
+@(message: String)
 
 @main("Databases Project") {
-	Home!
+	<div class="header-pad">
+		Select a table above to view data. 
+		<br>
+		Trigger = automatically change a thing. Fires on Insert, Update, Delete
+		<br>
+		Procedure = call to sql database. Authenticate data!
+	</div>
 }

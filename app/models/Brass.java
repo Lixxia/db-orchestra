@@ -12,26 +12,26 @@ import play.data.validation.*;
 public class Brass extends Model {
 	@Id
 	@Column(name = "id")
-	private int id;
+	public int id;
 
 	@Column(name = "instrument")
-	private String instrument;
+	public String instrument;
 
 	@Column(name = "instrument_key")
-	private String instrument_key;
+	public String instrument_key;
 
 	@Column(name = "clef")
-	private String clef;
+	public String clef;
 
 	@Column(name = "seat")
-	private int seat;
+	public int seat;
 
 	@Column(name = "player_id")
-	private int player_id;
+	public int player_id;
 
     @OneToOne
     @JoinColumn(name = "player_id", referencedColumnName = "id", updatable = false, insertable = false)
-	private Players myPlayer;
+	public Players myPlayer;
 
 	public static Finder<Integer,Brass> find = new Finder(
 		Integer.class, Brass.class

@@ -1,0 +1,23 @@
+@(symphonicstringForm: Form[SymphonicString])
+
+@import helper._
+@import helper.twitterBootstrap._
+
+@main("Update") {
+	<div class="header-pad">
+		@form(routes.SymphStringControl.save()) {
+		<fieldset>
+				@inputText(symphonicstringForm("instrument"), '_label -> "Instrument")
+				@inputText(symphonicstringForm("section"), '_label -> "Section")
+				@inputText(symphonicstringForm("seat"), '_label -> "Seat")
+				@inputText(symphonicstringForm("clef"), '_label -> "Clef")
+				@inputText(symphonicstringForm("player_id"), '_label -> "Player Id")
+		</fieldset>
+
+		<div class="actions">
+			<input type="submit" value="Save" class="btn btn-primary"> or
+			<a href="@routes.Application.index()" class="btn">Cancel</a>
+		</div>
+		}
+	</div>
+}

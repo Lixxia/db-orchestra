@@ -1,30 +1,38 @@
 @(title: String)(content: Html)
 
+@import helper._
+
 <!DOCTYPE html>
 
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css">
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/js/bootstrap.min.js"></script>
 
 <html lang="en">
+	<META http-equiv="Content-Type" content="text/html; charset=UTF-8">
    <!-- Nav tabs -->
+   <nav class="nav navbar-nav navbar-fixed-top" role="navigation">
 	<ul class="nav nav-tabs">
-	  <li role="presentation" class="@("active".when(request.path == controllers.routes.Application.players().toString()))">
-	  	<a href="players">Players</a></li>
-	  <li role="presentation" class="@("active".when(request.path == controllers.routes.Application.orchestra().toString()))">
-	  	<a href="orchestra">Orchestra</a></li>
-	  <li role="presentation" class="@("active".when(request.path == controllers.routes.Application.brass().toString()))">
-	  	<a href="brass">Brass</a></li>
-	  <li role="presentation" class="@("active".when(request.path == controllers.routes.Application.woodwind().toString()))">
-	  	<a href="woodwind">Woodwind</a></li>
-	  <li role="presentation" class="@("active".when(request.path == controllers.routes.Application.keyboard().toString()))">
-	  	<a href="keyboard">Keyboard</a></li>
-	  <li role="presentation" class="@("active".when(request.path == controllers.routes.Application.percussion().toString()))">
-	  	<a href="percussion">Percussion</a></li>
-	  <li role="presentation" class="@("active".when(request.path == controllers.routes.Application.symphonicstring().toString()))">
-	  	<a href="symphonicstring">Symphonic Strings</a></li>
-
+	  <li role="presentation" class="@("active".when(request.path == controllers.routes.PlayersControl.players().toString()))">
+	  	<a href="/players">Players</a></li>
+	  <li role="presentation" class="@("active".when(request.path == controllers.routes.OrchestraControl.orchestra().toString()))">
+	  	<a href="/orchestra">Orchestra</a></li>
+	  <li role="presentation" class="@("active".when(request.path == controllers.routes.BrassControl.brass().toString()))">
+	  	<a href="/brass">Brass</a></li>
+	  <li role="presentation" class="@("active".when(request.path == controllers.routes.WoodwindControl.woodwind().toString()))">
+	  	<a href="/woodwind">Woodwind</a></li>
+	  <li role="presentation" class="@("active".when(request.path == controllers.routes.KeyboardControl.keyboard().toString()))">
+	  	<a href="/keyboard">Keyboard</a></li>
+	  <li role="presentation" class="@("active".when(request.path == controllers.routes.PercussionControl.percussion().toString()))">
+	  	<a href="/percussion">Percussion</a></li>
+	  <li role="presentation" class="@("active".when(request.path == controllers.routes.SymphStringControl.symphonicstring().toString()))">
+	  	<a href="/symphonicstring">Symphonic Strings</a></li>
+	  	<div class="navbar-right pad-fix">
+			@form(routes.Application.createForm(request.path)) {
+				<input type="submit" value="Add Row" class="btn btn-success">
+			}
+		</div>
 	</ul>
-
+</nav>
     <head>
         <title>@title</title>
         <link rel="stylesheet" media="screen" href="@routes.Assets.at("stylesheets/main.css")">
@@ -33,6 +41,7 @@
     </head>
     <body>
     	<center>
+
 	    	<div class="container">
 	        @content
 	   	 	</div>

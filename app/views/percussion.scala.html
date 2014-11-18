@@ -24,9 +24,14 @@
 			<td>@percussion.getType()</td>
 			<td>@percussion.getPlayer()</td>
 			<td>
-			@form(routes.Application.deleteRow("Percussion",percussion.getId())) {
+			@form(routes.PercussionControl.delete(percussion.getId())) {
 				<input type="submit" value="Delete" class="btn btn-danger">
 				}
+			</td>
+			<td>
+			@form(routes.PercussionControl.createForm()) {
+				<input type="submit" value="Update" class="btn btn-success">
+			}
 			</td>
 			</tr>
 		}

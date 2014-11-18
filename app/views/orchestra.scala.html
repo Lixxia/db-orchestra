@@ -26,12 +26,12 @@
 			<td>@orch.getNum()</td>
 			<td>@orch.getStyle()</td>
 			<td>
-			@form(routes.Application.deleteRow("Orchestra",orch.getId())) {
+			@form(routes.OrchestraControl.delete(orch.getId())) {
 				<input type="submit" value="Delete" class="btn btn-danger">
 				}
 			</td>
 			<td>
-			@form(routes.Application.createForm()) {
+			@form(routes.OrchestraControl.createForm()) {
 				<input type="submit" value="Update" class="btn btn-success">
 			}
 			</td>

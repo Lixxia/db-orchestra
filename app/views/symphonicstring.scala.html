@@ -28,9 +28,14 @@
 			<td>@string.getClef()</td>
 			<td>@string.getPlayer()</td>
 			<td>
-			@form(routes.Application.deleteRow("SymphonicString",string.getId())) {
+			@form(routes.SymphStringControl.delete(string.getId())) {
 				<input type="submit" value="Delete" class="btn btn-danger">
 				}
+			</td>
+			<td>
+			@form(routes.SymphStringControl.createForm()) {
+				<input type="submit" value="Update" class="btn btn-success">
+			}
 			</td>
 			</tr>
 		}

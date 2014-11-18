@@ -14,38 +14,38 @@ import javax.persistence.*;
 public class Players extends Model {
 	@Id
 	@Column(name = "id")
-	private int id;
+	public int id;
 
 	@Column(name = "first_name")
-	private String first_name;
+	public String first_name;
 
 	@Column(name = "last_name")
-	private String last_name;
+	public String last_name;
 
 	@Column(name = "email")
-	private String email;
+	public String email;
 
 	@Column(name = "telephone")
-	private String telephone;
+	public String telephone;
 
 	@OneToOne(cascade = CascadeType.ALL, mappedBy = "myPlayer", fetch = FetchType.EAGER)
-	private Brass myBrass;
+	public Brass myBrass;
 
 	@OneToOne(cascade = CascadeType.ALL, mappedBy = "myPlayer", fetch = FetchType.EAGER)
-	private Woodwind myWoodwind;
+	public Woodwind myWoodwind;
 
 	@OneToOne(cascade = CascadeType.ALL, mappedBy = "myPlayer", fetch = FetchType.EAGER)
-	private Keyboard myKeyboard;
+	public Keyboard myKeyboard;
 
 	@OneToOne(cascade = CascadeType.ALL, mappedBy = "myPlayer", fetch = FetchType.EAGER)
-	private Percussion myPercussion;
+	public Percussion myPercussion;
 
 	@OneToOne(cascade = CascadeType.ALL, mappedBy = "myPlayer", fetch = FetchType.EAGER)
-	private SymphonicString mySymphonicString;
+	public SymphonicString mySymphonicString;
 
 	@ManyToOne
     @JoinColumn(name = "orchestra_id", referencedColumnName = "id")
-	private Orchestra myOrchestra;
+	public Orchestra myOrchestra;
 
 	public static Finder<Integer,Players> find = new Finder(
 		Integer.class, Players.class
@@ -91,6 +91,10 @@ public class Players extends Model {
 
 	public Orchestra getOrchestra() {
 		return this.myOrchestra;
+	}
+
+	public void setOrchestra(int orchestra_id) {
+		this.myOrchestra = Orchestra.find.byId(orchestra_id);
 	}
 
 	public Players(String first_name, String last_name) {

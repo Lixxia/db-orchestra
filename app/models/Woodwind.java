@@ -12,20 +12,20 @@ import play.data.validation.*;
 public class Woodwind extends Model {
 	@Id
 	@Column(name = "id")
-	private int id;
+	public int id;
 
 	@Column(name = "instrument")
-	private String instrument;
+	public String instrument;
 
 	@Column(name = "clef")
-	private String clef;
+	public String clef;
 
 	@Column(name = "player_id")
-	private int player_id;
+	public int player_id;
 
     @OneToOne
     @JoinColumn(name = "player_id", referencedColumnName = "id")
-	private Players myPlayer;
+	public Players myPlayer;
 
 	public static Finder<Integer,Woodwind> find = new Finder(
 		Integer.class, Woodwind.class

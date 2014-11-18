@@ -15,8 +15,8 @@
 			<th>First Name</th>
 			<th>Last Name</th>
 			<th>Email</th>
-			<th>Phome</th>
-			<th>Orchestra ID</th>
+			<th>Phone</th>
+			<th>Orchestra</th>
 			<th>Delete Row</th>
 			<th>Update Row</th>
 		</tr>
@@ -27,14 +27,14 @@
 			<td>@player.getLast()</td>
 			<td>@player.getEmail()</td>
 			<td>@player.getPhone()</td>
-			<td>@player.getOrchestra()</td>
+			<td>@player.getOrchestra().getName()</td>
 			<td>
-			@form(routes.Application.deleteRow("Players",player.getId())) {
+			@form(routes.PlayersControl.delete(player.getId())) {
 				<input type="submit" value="Delete" class="btn btn-danger">
 				}
 			</td>
 			<td>
-			@form(routes.Application.createForm()) {
+			@form(routes.PlayersControl.createForm()) {
 				<input type="submit" value="Update" class="btn btn-success">
 			}
 			</td>

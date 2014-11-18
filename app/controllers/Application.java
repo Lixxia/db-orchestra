@@ -13,112 +13,34 @@ import views.html.*;
 public class Application extends Controller {
 
     public static Result index() {
-        return ok(index.render(
-        	Orchestra.find.all(),
-        	Players.find.all()
-        ));
+        return ok(views.html.index.render("Index"));
     }
 
-    public static Result createForm() {
-        Form<Orchestra> orchestraForm = form(Orchestra.class);
-        return ok(views.html.createForm.render(orchestraForm));
-    }
-
-    public static Result save() {
-        System.out.println(request().body().asFormUrlEncoded().get("name")[0]);
-    	Form<Orchestra> orchestraForm = form(Orchestra.class).bindFromRequest();
-    	if (orchestraForm.hasErrors()) {
-    		return badRequest(views.html.createForm.render(orchestraForm));
-    	}
-        System.out.println(orchestraForm.get());
-    	Orchestra myOrchestra = orchestraForm.get();
-    	return redirect(routes.Application.orchestra());
-    }
-
-    //Controllers for each table
-    public static Result players() {
-    	return ok(players.render(
-    		Players.find.all()
-    	));
-    }
-
-    public static Result orchestra() {
-    	return ok(orchestra.render(
-    		Orchestra.find.all()
-    	));
-    }
-
-	public static Result brass() {
-    	return ok(brass.render(
-    		Brass.find.all()
-    	));
-    }   
-
-    public static Result woodwind() {
-    	return ok(woodwind.render(
-    		Woodwind.find.all()
-    	));
-    }
-
-    public static Result keyboard() {
-    	return ok(keyboard.render(
-    		Keyboard.find.all()
-    	));
-    } 
-
-    public static Result percussion() {
-    	return ok(percussion.render(
-    		Percussion.find.all()
-    	));
-    }
-
-    public static Result symphonicstring() {
-    	return ok(symphonicstring.render(
-    		SymphonicString.find.all()
-    	));
-    }
-
-    public static Result addRow(String name) {
-    	return TODO;
-    }
-
-    public static Result updateRow(String name, int id) {
-    	return TODO;
-    }
-
-    public static Result deleteRow(String name, int id) {
-    	if(name.equals("Players")) {
-    		Players.delete(id);
-            return redirect(routes.Application.players());
-    	}
-    	else if(name.equals("Orchestra")) {
-    		Orchestra.delete(id);
-            return redirect(routes.Application.orchestra());
-    	}
-    	else if(name.equals("Brass")) {
-    		Brass.delete(id);
-            return redirect(routes.Application.brass());
-    	}
-    	else if(name.equals("Keyboard")) {
-    		Keyboard.delete(id);
-            return redirect(routes.Application.keyboard());
-    	}
-    	else if(name.equals("Percussion")) {
-    		Percussion.delete(id);
-            return redirect(routes.Application.percussion());
-    	}
-    	else if(name.equals("SymphonicString")) {
-    		SymphonicString.delete(id);
-            return redirect(routes.Application.symphonicstring());
-    	}
-    	else if(name.equals("Woodwind")) {
-    		Woodwind.delete(id);
-            return redirect(routes.Application.woodwind());
-    	}
+    public static Result createForm(String path) {
+        System.out.println(path);
+        if(path.equals("players") || path.equals("/players")) {
+            return redirect(routes.PlayersControl.createForm());
+        }
+        else if(path.equals("orchestra") || path.equals("/orchestra")) {
+            return redirect(routes.OrchestraControl.createForm());
+        }
+        else if(path.equals("brass") || path.equals("/brass")) {
+            return redirect(routes.BrassControl.createForm());
+        }
+        else if(path.equals("keyboard") || path.equals("/keyboard")) {
+            return redirect(routes.KeyboardControl.createForm());
+        }
+        else if(path.equals("percussion") || path.equals("/percussion")) {
+            return redirect(routes.PercussionControl.createForm());
+        }
+        else if(path.equals("symphonicstring") || path.equals("/symphonicstring")) {
+            return redirect(routes.SymphStringControl.createForm());
+        }
+        else if(path.equals("woodwind") || path.equals("/woodwind")) {
+            return redirect(routes.WoodwindControl.createForm());
+        }
         else {
             return redirect(routes.Application.index());
         }
-    	
     }
-
 }

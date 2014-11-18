@@ -5,7 +5,6 @@ enclosed by '"'
 lines terminated by '\n' 
 ignore 1 rows;
 
-
 load data infile '/home/lixxia/repos/db-orchestra/app/assets/playersdata.csv' 
 into table Players
 fields terminated by ',' 

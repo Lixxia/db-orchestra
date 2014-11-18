@@ -28,11 +28,15 @@
 			<td>@br.getSeat()</td>
 			<td>@br.getPlayer()</td>
 			<td>
-			@form(routes.Application.deleteRow("Brass",br.getId())) {
+			@form(routes.BrassControl.delete(br.getId())) {
 				<input type="submit" value="Delete" class="btn btn-danger">
 				}
 			</td>
-			
+			<td>
+			@form(routes.BrassControl.createForm()) {
+				<input type="submit" value="Update" class="btn btn-success">
+			}
+			</td>
 			</tr>
 		}
 		</table>

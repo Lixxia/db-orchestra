@@ -24,9 +24,14 @@
 			<td>@woodwind.getClef()</td>
 			<td>@woodwind.getPlayer()</td>
 			<td>
-			@form(routes.Application.deleteRow("Woodwind",woodwind.getId())) {
+			@form(routes.WoodwindControl.delete(woodwind.getId())) {
 				<input type="submit" value="Delete" class="btn btn-danger">
 				}
+			</td>
+			<td>
+			@form(routes.WoodwindControl.createForm()) {
+				<input type="submit" value="Update" class="btn btn-success">
+			}
 			</td>
 			</tr>
 		}

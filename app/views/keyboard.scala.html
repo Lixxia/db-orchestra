@@ -24,9 +24,14 @@
 			<td>@keyboard.getClef()</td>
 			<td>@keyboard.getPlayer()</td>
 			<td>
-			@form(routes.Application.deleteRow("Keyboard",keyboard.getId())) {
+			@form(routes.KeyboardControl.delete(keyboard.getId())) {
 				<input type="submit" value="Delete" class="btn btn-danger">
 				}
+			</td>
+			<td>
+			@form(routes.KeyboardControl.createForm()) {
+				<input type="submit" value="Update" class="btn btn-success">
+			}
 			</td>
 			</tr>
 		}

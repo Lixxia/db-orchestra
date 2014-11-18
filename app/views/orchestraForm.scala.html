@@ -1,10 +1,11 @@
 @(orchestraForm: Form[Orchestra])
 
 @import helper._
+@import helper.twitterBootstrap._
 
 @main("Update") {
-	
-		@form(routes.Application.save()) {
+	<div class="header-pad">
+		@form(routes.OrchestraControl.save()) {
 		<fieldset>
 				@inputText(orchestraForm("name"), '_label -> "Name")
 				@inputText(orchestraForm("type"), '_label -> "Type")
@@ -13,8 +14,9 @@
 		</fieldset>
 
 		<div class="actions">
-			<input type="submit" value="Save" class="btn btn-primary"> or
+			<input type="submit" value="Save" class="btn btn-primary"> 
 			<a href="@routes.Application.index()" class="btn">Cancel</a>
 		</div>
-	}
+		}
+	</div>
 }

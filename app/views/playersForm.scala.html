@@ -1,0 +1,23 @@
+@(playersForm: Form[Players])
+
+@import helper._
+@import helper.twitterBootstrap._
+
+@main("Update") {
+	<div class="header-pad">
+		@form(routes.PlayersControl.save()) {
+		<fieldset>
+				@inputText(playersForm("first_name"), '_label -> "Last Name")
+				@inputText(playersForm("last_name"), '_label -> "Last Name")
+				@inputText(playersForm("email"), '_label -> "Email")
+				@inputText(playersForm("telephone"), '_label -> "Phone")
+				@inputText(playersForm("orchestra_id"), '_label -> "Orchestra Id")
+		</fieldset>
+
+		<div class="actions">
+			<input type="submit" value="Save" class="btn btn-primary"> or
+			<a href="@routes.Application.index()" class="btn">Cancel</a>
+		</div>
+		}
+	</div>
+}
