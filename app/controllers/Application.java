@@ -25,13 +25,13 @@ public class Application extends Controller {
     }
 
     public static Result save() {
-        System.out.println(request().body().asFormUrlEncoded());
+        System.out.println(request().body().asFormUrlEncoded().get("name")[0]);
     	Form<Orchestra> orchestraForm = form(Orchestra.class).bindFromRequest();
     	if (orchestraForm.hasErrors()) {
     		return badRequest(views.html.createForm.render(orchestraForm));
     	}
-    	orchestraForm.get().save();
-    	flash("Success");
+        System.out.println(orchestraForm.get());
+    	Orchestra myOrchestra = orchestraForm.get();
     	return redirect(routes.Application.orchestra());
     }
 
