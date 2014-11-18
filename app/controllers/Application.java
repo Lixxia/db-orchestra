@@ -19,15 +19,20 @@ public class Application extends Controller {
         ));
     }
 
-    public static Result update() {
-    	Form<Orchestra> orchestraForm = form(Orchestra.class).bindFromRequest().get();
+    public static Result createForm() {
+        Form<Orchestra> orchestraForm = form(Orchestra.class);
+        return ok(views.html.createForm.render(orchestraForm));
+    }
+
+    public static Result save() {
+        System.out.println(request().body().asFormUrlEncoded());
+    	Form<Orchestra> orchestraForm = form(Orchestra.class).bindFromRequest();
     	if (orchestraForm.hasErrors()) {
-    		return badRequest(views.html.update.render(orchestraForm));
+    		return badRequest(views.html.createForm.render(orchestraForm));
     	}
     	orchestraForm.get().save();
     	flash("Success");
-        System.out.println((Controller.request().queryString()).toString());
-    	return ok(views.html.update.render(orchestraForm));
+    	return redirect(routes.Application.orchestra());
     }
 
     //Controllers for each table

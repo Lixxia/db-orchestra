@@ -15,8 +15,8 @@ GET 	/percussion					controllers.Application.percussion()
 GET		/symphonicstring			controllers.Application.symphonicstring()
 
 # Database Interactions
-POST	/:name/add					controllers.Application.addRow(name: String)
-GET 	/update						controllers.Application.update()
+GET 	/create						controllers.Application.createForm()
+POST 	/save						controllers.Application.save()
 POST	/:name/:id/update			controllers.Application.updateRow(name: String,id: Int)
 POST	/:name/:id/delete			controllers.Application.deleteRow(name: String,id: Int)
 
