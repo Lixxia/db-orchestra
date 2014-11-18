@@ -7,12 +7,14 @@ GET     /                           controllers.Application.index()
 
 # Redirect
 POST 	/redirect					controllers.Application.createForm(name: String)
+
 # Orchestra Interactions and Display
 GET		/orchestra   				controllers.OrchestraControl.orchestra()
 GET		/orchestra/create  			controllers.OrchestraControl.createForm()
 POST    /orchestra/save 			controllers.OrchestraControl.save()
 POST    /orchestra/:id/delete 		controllers.OrchestraControl.delete(id: Int)
-POST    /orchestra/:id/update   	controllers.OrchestraControl.update(id: Int)
+GET     /orchestra/:id/update   	controllers.OrchestraControl.createUpdateForm(id: Int)
+POST	/orchestra/:id/updateSave	controllers.OrchestraControl.update(id: Int)
 
 # Player Interactions and Display
 GET		/players   					controllers.PlayersControl.players()
