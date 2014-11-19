@@ -1,21 +1,21 @@
-@(symphonicstringUpdateForm: Form[SymphonicString])
+@(symphonicstringUpdateForm: Form[SymphonicString], id: Int)
 
 @import helper._
 
 @main("Update") {
-	<div class="header-pad">
-		@form(routes.SymphStringControl.update(1)) {
+	<div class="header-pad form-group col-sm-3 col-xs-6 col-centered">
+		@form(routes.SymphStringControl.update(id)) {
 		<fieldset>
-				@inputText(symphonicstringUpdateForm("instrument"), '_label -> "Instrument")
-				@inputText(symphonicstringUpdateForm("section"), '_label -> "Section")
-				@inputText(symphonicstringUpdateForm("seat"), '_label -> "Seat")
-				@inputText(symphonicstringUpdateForm("clef"), '_label -> "Clef")
-				@inputText(symphonicstringUpdateForm("player_id"), '_label -> "Player Id")
+				@inputText(symphonicstringUpdateForm("instrument"), '_label -> "Instrument", 'class -> "form-control")
+				@inputText(symphonicstringUpdateForm("section"), '_label -> "Section", 'class -> "form-control")
+				@inputText(symphonicstringUpdateForm("seat"), '_label -> "Seat", 'class -> "form-control")
+				@inputText(symphonicstringUpdateForm("clef"), '_label -> "Clef", 'class -> "form-control")
+				@inputText(symphonicstringUpdateForm("player_id"), '_label -> "Player Id", 'class -> "form-control")
 		</fieldset>
 
 		<div class="actions">
 			<input type="submit" value="Save" class="btn btn-primary"> or
-			<a href="@routes.Application.index()" class="btn">Cancel</a>
+			<a href="@routes.SymphStringControl.symphonicstring()" class="btn btn-default">Cancel</a>
 		</div>
 		}
 	</div>

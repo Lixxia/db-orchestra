@@ -1,0 +1,27 @@
+@(playersUpdateForm: Form[Players], id: Int)
+
+@import helper._
+
+@main("Update") {
+	<div class="header-pad form-group col-sm-3 col-xs-6 col-centered">
+		@form(routes.PlayersControl.update(id)) {
+		<fieldset>
+				@inputText(playersUpdateForm("first_name"), '_label -> "Last Name", 'class -> "form-control")
+				@inputText(playersUpdateForm("last_name"), '_label -> "Last Name", 'class -> "form-control")
+				@inputText(playersUpdateForm("email"), '_label -> "Email", 'class -> "form-control")
+				@inputText(playersUpdateForm("telephone"), '_label -> "Phone", 'class -> "form-control")
+
+				@select(
+					playersUpdateForm("orchestra_id"),
+					options(Orchestra.options()),
+					'_label -> "Orchestra", '_default -> Players.find.byId(id).getOrchestra().getName(),
+					'_showConstraints -> false, 'class -> "form-control"
+				)
+		</fieldset>
+		<div class="actions">
+			<input type="submit" value="Save" class="btn btn-primary"> or
+			<a href="@routes.PlayersControl.players()" class="btn btn-default">Cancel</a>
+		</div>
+		}
+	</div>
+}

@@ -3,19 +3,25 @@
 @import helper._
 
 @main("Update") {
-	<div class="header-pad">
+	<div class="header-pad form-group col-sm-3 col-xs-6 col-centered">
 		@form(routes.PlayersControl.save()) {
 		<fieldset>
-				@inputText(playersForm("first_name"), '_label -> "Last Name")
-				@inputText(playersForm("last_name"), '_label -> "Last Name")
-				@inputText(playersForm("email"), '_label -> "Email")
-				@inputText(playersForm("telephone"), '_label -> "Phone")
-				@inputText(playersForm("orchestra_id"), '_label -> "Orchestra Id")
+				@inputText(playersForm("first_name"), '_label -> "Last Name", 'class -> "form-control")
+				@inputText(playersForm("last_name"), '_label -> "Last Name", 'class -> "form-control")
+				@inputText(playersForm("email"), '_label -> "Email", 'class -> "form-control")
+				@inputText(playersForm("telephone"), '_label -> "Phone", 'class -> "form-control")
+
+				@select(
+					playersForm("orchestra_id"),
+					options(Orchestra.options()),
+					'_label -> "Orchestra", '_default -> "-- Choose an Orchestra --",
+					'_showConstraints -> false, 'class -> "form-control"
+				)
 		</fieldset>
 
 		<div class="actions">
 			<input type="submit" value="Save" class="btn btn-primary"> or
-			<a href="@routes.Application.index()" class="btn">Cancel</a>
+			<a href="@routes.PlayersControl.players()" class="btn btn-default">Cancel</a>
 		</div>
 		}
 	</div>

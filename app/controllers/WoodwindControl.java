@@ -29,13 +29,13 @@ public class WoodwindControl extends Controller {
 
     public static Result createUpdateForm(int id) {
         Form<Woodwind> woodwindUpdateForm = form(Woodwind.class).fill(Woodwind.find.byId(id));
-        return ok(views.html.woodwindUpdateForm.render(woodwindUpdateForm));
+        return ok(views.html.woodwindUpdateForm.render(woodwindUpdateForm,id));
     }
 
     public static Result update(int id) {
         Form<Woodwind> woodwindUpdateForm = form(Woodwind.class).fill(Woodwind.find.byId(id)).bindFromRequest();
         if (woodwindUpdateForm.hasErrors()) {
-            return badRequest(views.html.woodwindUpdateForm.render(woodwindUpdateForm));
+            return badRequest(views.html.woodwindUpdateForm.render(woodwindUpdateForm,id));
         }
         Woodwind updateWoodwind = woodwindUpdateForm.get();
         updateWoodwind.setId(id);

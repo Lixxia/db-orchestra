@@ -3,19 +3,19 @@
 @import helper._
 
 @main("Update") {
-	<div class="header-pad">
+	<div class="header-pad form-group col-sm-3 col-xs-6 col-centered">
 		@form(routes.SymphStringControl.save()) {
 		<fieldset>
-				@inputText(symphonicstringForm("instrument"), '_label -> "Instrument")
-				@inputText(symphonicstringForm("section"), '_label -> "Section")
-				@inputText(symphonicstringForm("seat"), '_label -> "Seat")
-				@inputText(symphonicstringForm("clef"), '_label -> "Clef")
-				@inputText(symphonicstringForm("player_id"), '_label -> "Player Id")
+				@inputText(symphonicstringForm("instrument"), '_label -> "Instrument", 'class -> "form-control")
+				@inputText(symphonicstringForm("section"), '_label -> "Section", 'class -> "form-control")
+				@inputText(symphonicstringForm("seat"), '_label -> "Seat", 'class -> "form-control")
+				@inputText(symphonicstringForm("clef"), '_label -> "Clef", 'class -> "form-control")
+				@inputText(symphonicstringForm("player_id"), '_label -> "Player Id", 'class -> "form-control")
 		</fieldset>
 
 		<div class="actions">
 			<input type="submit" value="Save" class="btn btn-primary"> or
-			<a href="@routes.Application.index()" class="btn">Cancel</a>
+			<a href="@routes.SymphStringControl.symphonicstring()" class="btn btn-default">Cancel</a>
 		</div>
 		}
 	</div>

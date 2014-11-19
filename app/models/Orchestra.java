@@ -74,4 +74,12 @@ public class Orchestra extends Model {
 	public void setId(int id) {
 		this.id = id;
 	}
+
+	public static Map<String, String> options() {
+		Map<String, String> options = new LinkedHashMap<String, String>();
+		for (Orchestra o : Orchestra.find.orderBy("name").findList()) {
+			options.put(Integer.toString(o.id),o.name);
+		}
+		return options;
+	}
 }

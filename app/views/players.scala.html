@@ -34,7 +34,7 @@
 				}
 			</td>
 			<td>
-			@form(routes.PlayersControl.createForm()) {
+			@form(routes.PlayersControl.createUpdateForm(player.getId())) {
 				<input type="submit" value="Update" class="btn btn-success">
 			}
 			</td>

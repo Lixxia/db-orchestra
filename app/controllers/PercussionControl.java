@@ -29,13 +29,13 @@ public class PercussionControl extends Controller {
 
     public static Result createUpdateForm(int id) {
         Form<Percussion> percussionUpdateForm = form(Percussion.class).fill(Percussion.find.byId(id));
-        return ok(views.html.percussionUpdateForm.render(percussionUpdateForm));
+        return ok(views.html.percussionUpdateForm.render(percussionUpdateForm,id));
     }
 
     public static Result update(int id) {
         Form<Percussion> percussionUpdateForm = form(Percussion.class).fill(Percussion.find.byId(id)).bindFromRequest();
         if (percussionUpdateForm.hasErrors()) {
-            return badRequest(views.html.percussionUpdateForm.render(percussionUpdateForm));
+            return badRequest(views.html.percussionUpdateForm.render(percussionUpdateForm,id));
         }
         Percussion updatePercussion = percussionUpdateForm.get();
         updatePercussion.setId(id);

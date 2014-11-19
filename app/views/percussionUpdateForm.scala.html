@@ -1,19 +1,19 @@
-@(percussionUpdateForm: Form[Percussion])
+@(percussionUpdateForm: Form[Percussion], id: Int)
 
 @import helper._
 
 @main("Update") {
-	<div class="header-pad">
-		@form(routes.PercussionControl.update(1)) {
+	<div class="header-pad form-group col-sm-3 col-xs-6 col-centered">
+		@form(routes.PercussionControl.update(id)) {
 		<fieldset>
-				@inputText(percussionUpdateForm("instrument"), '_label -> "Instrument")
-				@inputText(percussionUpdateForm("type"), '_label -> "Type")
-				@inputText(percussionUpdateForm("player_id"), '_label -> "Player Id")
+				@inputText(percussionUpdateForm("instrument"), '_label -> "Instrument", 'class -> "form-control")
+				@inputText(percussionUpdateForm("type"), '_label -> "Type", 'class -> "form-control")
+				@inputText(percussionUpdateForm("player_id"), '_label -> "Player Id", 'class -> "form-control")
 		</fieldset>
 
 		<div class="actions">
 			<input type="submit" value="Save" class="btn btn-primary"> or
-			<a href="@routes.Application.index()" class="btn">Cancel</a>
+			<a href="@routes.PercussionControl.percussion()" class="btn btn-default">Cancel</a>
 		</div>
 		}
 	</div>

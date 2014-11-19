@@ -1,21 +1,20 @@
-@(orchestraUpdateForm: Form[Orchestra])
+@(orchestraUpdateForm: Form[Orchestra], id: Int)
 
 @import helper._
 
 @main("Update") {
-	<div class="header-pad">
-		@Orchestra.getId()
-		@form(routes.OrchestraControl.update(1)) {
+	<div class="header-pad form-group col-sm-3 col-xs-6 col-centered">
+		@form(routes.OrchestraControl.update(id)) {
 		<fieldset>
-				@inputText(orchestraUpdateForm("name"), '_label -> "Name")
-				@inputText(orchestraUpdateForm("type"), '_label -> "Type")
-				@inputText(orchestraUpdateForm("num_players"), '_label -> "Num Players")
-				@inputText(orchestraUpdateForm("style"), '_label -> "Style")
+				@inputText(orchestraUpdateForm("name"), '_label -> "Name", 'class -> "form-control")
+				@inputText(orchestraUpdateForm("type"), '_label -> "Type", 'class -> "form-control")
+				@inputText(orchestraUpdateForm("num_players"), '_label -> "Num Players", 'class -> "form-control")
+				@inputText(orchestraUpdateForm("style"), '_label -> "Style", 'class -> "form-control")
 		</fieldset>
 
 		<div class="actions">
 			<input type="submit" value="Save" class="btn btn-primary"> 
-			<a href="@routes.Application.index()" class="btn">Cancel</a>
+			<a href="@routes.OrchestraControl.orchestra()" class="btn btn-default">Cancel</a>
 		</div>
 		}
 	</div>

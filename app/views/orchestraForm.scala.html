@@ -3,18 +3,18 @@
 @import helper._
 
 @main("Update") {
-	<div class="header-pad">
+	<div class="header-pad form-group col-sm-3 col-xs-6 col-centered">
 		@form(routes.OrchestraControl.save()) {
 		<fieldset>
-				@inputText(orchestraForm("name"), '_label -> "Name")
-				@inputText(orchestraForm("type"), '_label -> "Type")
-				@inputText(orchestraForm("num_players"), '_label -> "Num Players")
-				@inputText(orchestraForm("style"), '_label -> "Style")
+				@inputText(orchestraForm("name"), '_label -> "Name", 'class -> "form-control")
+				@inputText(orchestraForm("type"), '_label -> "Type", 'class -> "form-control")
+				@inputText(orchestraForm("num_players"), '_label -> "Num Players", 'class -> "form-control")
+				@inputText(orchestraForm("style"), '_label -> "Style", 'class -> "form-control")
 		</fieldset>
 
 		<div class="actions">
 			<input type="submit" value="Save" class="btn btn-primary"> 
-			<a href="@routes.Application.index()" class="btn">Cancel</a>
+			<a href="@routes.OrchestraControl.orchestra()" class="btn btn-default">Cancel</a>
 		</div>
 		}
 	</div>

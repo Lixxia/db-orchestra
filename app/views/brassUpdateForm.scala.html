@@ -1,22 +1,21 @@
-@(brassUpdateForm: Form[Brass])
+@(brassUpdateForm: Form[Brass], id: Int)
 
 @import helper._
 
 @main("Update") {
-	<div class="header-pad">
-		@id
-		@form(routes.BrassControl.update(1)) {
+	<div class="header-pad form-group col-sm-3 col-xs-6 col-centered">
+		@form(routes.BrassControl.update(id)) {
 		<fieldset>
-				@inputText(brassUpdateForm("instrument"), '_label -> "Instrument")
-				@inputText(brassUpdateForm("instrument_key"), '_label -> "Key")
-				@inputText(brassUpdateForm("clef"), '_label -> "Clef")
-				@inputText(brassUpdateForm("seat"), '_label -> "Seat")
-				@inputText(brassUpdateForm("player_id"), '_label -> "Player Id")
+				@inputText(brassUpdateForm("instrument"), '_label -> "Instrument", 'class -> "form-control")
+				@inputText(brassUpdateForm("instrument_key"), '_label -> "Key", 'class -> "form-control")
+				@inputText(brassUpdateForm("clef"), '_label -> "Clef", 'class -> "form-control")
+				@inputText(brassUpdateForm("seat"), '_label -> "Seat", 'class -> "form-control")
+				@inputText(brassUpdateForm("player_id"), '_label -> "Player Id", 'class -> "form-control")
 		</fieldset>
 
 		<div class="actions">
 			<input type="submit" value="Save" class="btn btn-primary"> or
-			<a href="@routes.Application.index()" class="btn">Cancel</a>
+			<a href="@routes.BrassControl.brass()" class="btn btn-default">Cancel</a>
 		</div>
 		}
 	</div>

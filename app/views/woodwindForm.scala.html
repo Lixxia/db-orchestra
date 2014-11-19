@@ -3,17 +3,17 @@
 @import helper._
 
 @main("Update") {
-	<div class="header-pad">
+	<div class="header-pad form-group col-sm-3 col-xs-6 col-centered">
 		@form(routes.WoodwindControl.save()) {
 		<fieldset>
-				@inputText(woodwindForm("instrument"), '_label -> "Instrument")
-				@inputText(woodwindForm("clef"), '_label -> "Clef")
-				@inputText(woodwindForm("player_id"), '_label -> "Player Id")
+				@inputText(woodwindForm("instrument"), '_label -> "Instrument", 'class -> "form-control")
+				@inputText(woodwindForm("clef"), '_label -> "Clef", 'class -> "form-control")
+				@inputText(woodwindForm("player_id"), '_label -> "Player Id", 'class -> "form-control")
 		</fieldset>
 
 		<div class="actions">
 			<input type="submit" value="Save" class="btn btn-primary"> or
-			<a href="@routes.Application.index()" class="btn">Cancel</a>
+			<a href="@routes.WoodwindControl.woodwind()" class="btn btn-default">Cancel</a>
 		</div>
 		}
 	</div>

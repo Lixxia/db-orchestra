@@ -29,13 +29,13 @@ public class SymphStringControl extends Controller {
 
     public static Result createUpdateForm(int id) {
         Form<SymphonicString> symphonicstringUpdateForm = form(SymphonicString.class).fill(SymphonicString.find.byId(id));
-        return ok(views.html.symphonicstringUpdateForm.render(symphonicstringUpdateForm));
+        return ok(views.html.symphonicstringUpdateForm.render(symphonicstringUpdateForm,id));
     }
 
     public static Result update(int id) {
         Form<SymphonicString> symphonicstringUpdateForm = form(SymphonicString.class).fill(SymphonicString.find.byId(id)).bindFromRequest();
         if (symphonicstringUpdateForm.hasErrors()) {
-            return badRequest(views.html.symphonicstringUpdateForm.render(symphonicstringUpdateForm));
+            return badRequest(views.html.symphonicstringUpdateForm.render(symphonicstringUpdateForm,id));
         }
         SymphonicString updateSymphonicString = symphonicstringUpdateForm.get();
         updateSymphonicString.setId(id);

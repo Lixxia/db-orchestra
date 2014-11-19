@@ -29,13 +29,13 @@ public class BrassControl extends Controller {
 
     public static Result createUpdateForm(int id) {
         Form<Brass> brassUpdateForm = form(Brass.class).fill(Brass.find.byId(id));
-        return ok(views.html.brassUpdateForm.render(brassUpdateForm));
+        return ok(views.html.brassUpdateForm.render(brassUpdateForm,id));
     }
 
     public static Result update(int id) {
         Form<Brass> brassUpdateForm = form(Brass.class).fill(Brass.find.byId(id)).bindFromRequest();
         if (brassUpdateForm.hasErrors()) {
-            return badRequest(views.html.brassUpdateForm.render(brassUpdateForm));
+            return badRequest(views.html.brassUpdateForm.render(brassUpdateForm,id));
         }
         Brass updateBrass = brassUpdateForm.get();
         updateBrass.setId(id);

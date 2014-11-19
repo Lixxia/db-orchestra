@@ -3,17 +3,17 @@
 @import helper._
 
 @main("Update") {
-	<div class="header-pad">
+	<div class="header-pad form-group col-sm-3 col-xs-6 col-centered">
 		@form(routes.KeyboardControl.save()) {
 		<fieldset>
-				@inputText(keyboardForm("instrument"), '_label -> "Instrument")
-				@inputText(keyboardForm("clef"), '_label -> "Clef")
-				@inputText(keyboardForm("player_id"), '_label -> "Player Id")
+				@inputText(keyboardForm("instrument"), '_label -> "Instrument", 'class -> "form-control")
+				@inputText(keyboardForm("clef"), '_label -> "Clef", 'class -> "form-control")
+				@inputText(keyboardForm("player_id"), '_label -> "Player Id", 'class -> "form-control")
 		</fieldset>
 
 		<div class="actions">
 			<input type="submit" value="Save" class="btn btn-primary"> or
-			<a href="@routes.Application.index()" class="btn">Cancel</a>
+			<a href="@routes.KeyboardControl.keyboard()" class="btn btn-default">Cancel</a>
 		</div>
 		}
 	</div>

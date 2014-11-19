@@ -77,4 +77,8 @@ public class SymphonicString extends Model {
 	public int getPlayer() {
 		return this.player_id;
 	}
+
+	public void setId(int id) {
+		this.id = id;
+	}
 }
