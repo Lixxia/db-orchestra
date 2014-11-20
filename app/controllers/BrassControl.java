@@ -23,6 +23,7 @@ public class BrassControl extends Controller {
     		return badRequest(views.html.brassForm.render(brassForm));
     	}
     	Brass myBrass = brassForm.get();
+        myBrass.setPlayer(Integer.parseInt(brassForm.data().get("player_id")));
         myBrass.save();
     	return redirect(routes.BrassControl.brass());
     }
@@ -39,7 +40,7 @@ public class BrassControl extends Controller {
         }
         Brass updateBrass = brassUpdateForm.get();
         updateBrass.setId(id);
-        // Ebean.update(updateBrass);
+        updateBrass.setPlayer(Integer.parseInt(brassUpdateForm.data().get("player_id")));
         updateBrass.update();
         return redirect(routes.BrassControl.brass());
     }

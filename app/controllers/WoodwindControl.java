@@ -23,6 +23,7 @@ public class WoodwindControl extends Controller {
     		return badRequest(views.html.woodwindForm.render(woodwindForm));
     	}
     	Woodwind myWoodwind = woodwindForm.get();
+        myWoodwind.setPlayer(Integer.parseInt(woodwindForm.data().get("player_id")));
         myWoodwind.save();
     	return redirect(routes.WoodwindControl.woodwind());
     }
@@ -39,7 +40,7 @@ public class WoodwindControl extends Controller {
         }
         Woodwind updateWoodwind = woodwindUpdateForm.get();
         updateWoodwind.setId(id);
-        // Ebean.update(updateWoodwind);
+        updateWoodwind.setPlayer(Integer.parseInt(woodwindUpdateForm.data().get("player_id")));
         updateWoodwind.update();
         return redirect(routes.WoodwindControl.woodwind());
     }

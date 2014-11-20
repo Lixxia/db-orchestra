@@ -13,7 +13,7 @@
 			<th>ID</th>
 			<th>Instrument</th>
 			<th>Clef</th>
-			<th>Player ID</th>
+			<th>Player</th>
 			<th>Delete Row</th>
 			<th>Update Row</th>
 		</tr>
@@ -22,7 +22,7 @@
 			<td>@woodwind.getId()</td>
 			<td>@woodwind.getInstrument()</td>
 			<td>@woodwind.getClef()</td>
-			<td>@woodwind.getPlayer()</td>
+			<td>@woodwind.getPlayer().getName()</td>
 			<td>
 			@form(routes.WoodwindControl.delete(woodwind.getId())) {
 				<input type="submit" value="Delete" class="btn btn-danger">

@@ -20,14 +20,11 @@ public class Woodwind extends Model {
 	@Column(name = "clef")
 	public String clef;
 
-	@Column(name = "player_id")
-	public int player_id;
-
     @OneToOne
     @JoinColumn(name = "player_id", referencedColumnName = "id")
 	public Players myPlayer;
 
-	public static Finder<Integer,Woodwind> find = new Finder(
+	public static Model.Finder<Integer,Woodwind> find = new Finder(
 		Integer.class, Woodwind.class
 	);
 
@@ -61,8 +58,12 @@ public class Woodwind extends Model {
 		return this.clef;
 	}
 
-	public int getPlayer() {
-		return this.player_id;
+	public Players getPlayer() {
+		return this.myPlayer;
+	}
+	
+	public void setPlayer(int player_id) {
+		this.myPlayer = Players.find.byId(player_id);
 	}
 
 	public void setId(int id) {

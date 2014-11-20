@@ -23,6 +23,7 @@ public class KeyboardControl extends Controller {
     		return badRequest(views.html.keyboardForm.render(keyboardForm));
     	}
     	Keyboard myKeyboard = keyboardForm.get();
+        myKeyboard.setPlayer(Integer.parseInt(keyboardForm.data().get("player_id")));
         myKeyboard.save();
     	return redirect(routes.KeyboardControl.keyboard());
     }
@@ -39,7 +40,7 @@ public class KeyboardControl extends Controller {
         }
         Keyboard updateKeyboard = keyboardUpdateForm.get();
         updateKeyboard.setId(id);
-        // Ebean.update(updateKeyboard);
+        updateKeyboard.setPlayer(Integer.parseInt(keyboardUpdateForm.data().get("player_id")));
         updateKeyboard.update();
         return redirect(routes.KeyboardControl.keyboard());
     }

@@ -26,14 +26,11 @@ public class Brass extends Model {
 	@Column(name = "seat")
 	public int seat;
 
-	@Column(name = "player_id")
-	public int player_id;
-
     @OneToOne
-    @JoinColumn(name = "player_id", referencedColumnName = "id", updatable = false, insertable = false)
+    @JoinColumn(name = "player_id", referencedColumnName = "id")
 	public Players myPlayer;
 
-	public static Finder<Integer,Brass> find = new Finder(
+	public static Model.Finder<Integer,Brass> find = new Finder(
 		Integer.class, Brass.class
 	);
 
@@ -75,8 +72,12 @@ public class Brass extends Model {
 		return this.seat;
 	}
 
-	public int getPlayer() {
-		return this.player_id;
+	public Players getPlayer() {
+		return this.myPlayer;
+	}
+
+	public void setPlayer(int player_id) {
+		this.myPlayer = Players.find.byId(player_id);
 	}
 
 	public void setId(int id) {

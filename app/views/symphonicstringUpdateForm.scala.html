@@ -10,7 +10,13 @@
 				@inputText(symphonicstringUpdateForm("section"), '_label -> "Section", 'class -> "form-control")
 				@inputText(symphonicstringUpdateForm("seat"), '_label -> "Seat", 'class -> "form-control")
 				@inputText(symphonicstringUpdateForm("clef"), '_label -> "Clef", 'class -> "form-control")
-				@inputText(symphonicstringUpdateForm("player_id"), '_label -> "Player Id", 'class -> "form-control")
+				
+				@select(
+					symphonicstringUpdateForm("player_id"),
+					options(Players.options()),
+					'_label -> "Player", '_default -> SymphonicString.find.byId(id).getPlayer().getName(),
+					'_showConstraints -> false, 'class -> "form-control"
+				)
 		</fieldset>
 
 		<div class="actions">

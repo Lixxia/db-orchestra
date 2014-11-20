@@ -8,7 +8,13 @@
 		<fieldset>
 				@inputText(keyboardForm("instrument"), '_label -> "Instrument", 'class -> "form-control")
 				@inputText(keyboardForm("clef"), '_label -> "Clef", 'class -> "form-control")
-				@inputText(keyboardForm("player_id"), '_label -> "Player Id", 'class -> "form-control")
+				
+				@select(
+					keyboardForm("player_id"),
+					options(Players.options()),
+					'_label -> "Player", '_default -> "-- Choose a Player --",
+					'_showConstraints -> false, 'class -> "form-control"
+				)
 		</fieldset>
 
 		<div class="actions">

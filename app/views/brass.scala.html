@@ -16,7 +16,7 @@
 			<th>Key</th>
 			<th>Clef</th>
 			<th>Seat</th>
-			<th>Player ID</th>
+			<th>Player</th>
 			<th>Delete Row</th>
 			<th>Update Row</th>
 		</tr>
@@ -27,7 +27,7 @@
 			<td>@br.getKey()</td>
 			<td>@br.getClef()</td>
 			<td>@br.getSeat()</td>
-			<td>@br.getPlayer()</td>
+			<td>@br.getPlayer().getName()</td>
 			<td>
 			@form(routes.BrassControl.delete(br.getId())) {
 				<input type="submit" value="Delete" class="btn btn-danger">

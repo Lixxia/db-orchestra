@@ -40,7 +40,6 @@ public class OrchestraControl extends Controller {
         }
         Orchestra updateOrchestra = orchestraUpdateForm.get();
         updateOrchestra.setId(id);
-        // Ebean.update(updateOrchestra);
         updateOrchestra.update();
         return redirect(routes.OrchestraControl.orchestra());
     }

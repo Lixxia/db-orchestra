@@ -10,7 +10,13 @@
 				@inputText(brassUpdateForm("instrument_key"), '_label -> "Key", 'class -> "form-control")
 				@inputText(brassUpdateForm("clef"), '_label -> "Clef", 'class -> "form-control")
 				@inputText(brassUpdateForm("seat"), '_label -> "Seat", 'class -> "form-control")
-				@inputText(brassUpdateForm("player_id"), '_label -> "Player Id", 'class -> "form-control")
+				
+				@select(
+					brassUpdateForm("player_id"),
+					options(Players.options()),
+					'_label -> "Player", '_default -> Brass.find.byId(id).getPlayer().getName(),
+					'_showConstraints -> false, 'class -> "form-control"
+				)
 		</fieldset>
 
 		<div class="actions">

@@ -20,14 +20,11 @@ public class Percussion extends Model {
 	@Column(name = "type")
 	public String type;
 
-	@Column(name = "player_id")
-	public int player_id;
-
     @OneToOne
     @JoinColumn(name = "player_id", referencedColumnName = "id")
 	public Players myPlayer;
 
-	public static Finder<Integer,Percussion> find = new Finder(
+	public static Model.Finder<Integer,Percussion> find = new Finder(
 		Integer.class, Percussion.class
 	);
 
@@ -61,8 +58,12 @@ public class Percussion extends Model {
 		return this.type;
 	}
 
-	public int getPlayer() {
-		return this.player_id;
+	public Players getPlayer() {
+		return this.myPlayer;
+	}
+
+	public void setPlayer(int player_id) {
+		this.myPlayer = Players.find.byId(player_id);
 	}
 
 	public void setId(int id) {

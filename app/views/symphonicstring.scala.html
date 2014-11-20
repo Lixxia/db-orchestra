@@ -15,7 +15,7 @@
 			<th>Section</th>
 			<th>Seat</th>
 			<th>Clef</th>
-			<th>Player ID</th>
+			<th>Player</th>
 			<th>Delete Row</th>
 			<th>Update Row</th>
 		</tr>
@@ -26,7 +26,7 @@
 			<td>@string.getSection()</td>
 			<td>@string.getSeat()</td>
 			<td>@string.getClef()</td>
-			<td>@string.getPlayer()</td>
+			<td>@string.getPlayer().getName()</td>
 			<td>
 			@form(routes.SymphStringControl.delete(string.getId())) {
 				<input type="submit" value="Delete" class="btn btn-danger">

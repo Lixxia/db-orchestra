@@ -29,7 +29,7 @@ public class Orchestra extends Model {
     @OneToMany(cascade = CascadeType.ALL, mappedBy = "myPlayer", fetch = FetchType.EAGER)
 	public Players myPlayer;
 
-	public static Finder<Integer,Orchestra> find = new Finder(
+	public static Model.Finder<Integer,Orchestra> find = new Finder(
 		Integer.class, Orchestra.class
 	);
 

@@ -10,7 +10,13 @@
 				@inputText(symphonicstringForm("section"), '_label -> "Section", 'class -> "form-control")
 				@inputText(symphonicstringForm("seat"), '_label -> "Seat", 'class -> "form-control")
 				@inputText(symphonicstringForm("clef"), '_label -> "Clef", 'class -> "form-control")
-				@inputText(symphonicstringForm("player_id"), '_label -> "Player Id", 'class -> "form-control")
+				
+				@select(
+					symphonicstringForm("player_id"),
+					options(Players.options()),
+					'_label -> "Player", '_default -> "-- Choose a Player --",
+					'_showConstraints -> false, 'class -> "form-control"
+				)
 		</fieldset>
 
 		<div class="actions">

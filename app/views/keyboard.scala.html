@@ -13,7 +13,7 @@
 			<th>ID</th>
 			<th>Instrument</th>
 			<th>Clef</th>
-			<th>Player ID</th>
+			<th>Player</th>
 			<th>Delete Row</th>
 			<th>Update Row</th>
 		</tr>
@@ -22,7 +22,7 @@
 			<td>@keyboard.getId()</td>
 			<td>@keyboard.getInstrument()</td>
 			<td>@keyboard.getClef()</td>
-			<td>@keyboard.getPlayer()</td>
+			<td>@keyboard.getPlayer().getName()</td>
 			<td>
 			@form(routes.KeyboardControl.delete(keyboard.getId())) {
 				<input type="submit" value="Delete" class="btn btn-danger">

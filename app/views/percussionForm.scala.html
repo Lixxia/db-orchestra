@@ -8,7 +8,13 @@
 		<fieldset>
 				@inputText(percussionForm("instrument"), '_label -> "Instrument", 'class -> "form-control")
 				@inputText(percussionForm("type"), '_label -> "Type", 'class -> "form-control")
-				@inputText(percussionForm("player_id"), '_label -> "Player Id", 'class -> "form-control")
+
+				@select(
+					percussionForm("player_id"),
+					options(Players.options()),
+					'_label -> "Player", '_default -> "-- Choose a Player --",
+					'_showConstraints -> false, 'class -> "form-control"
+				)
 		</fieldset>
 
 		<div class="actions">

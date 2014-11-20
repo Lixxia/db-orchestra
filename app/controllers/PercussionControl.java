@@ -23,6 +23,7 @@ public class PercussionControl extends Controller {
     		return badRequest(views.html.percussionForm.render(percussionForm));
     	}
     	Percussion myPercussion = percussionForm.get();
+        myPercussion.setPlayer(Integer.parseInt(percussionForm.data().get("player_id")));
         myPercussion.save();
     	return redirect(routes.PercussionControl.percussion());
     }
@@ -39,7 +40,7 @@ public class PercussionControl extends Controller {
         }
         Percussion updatePercussion = percussionUpdateForm.get();
         updatePercussion.setId(id);
-        // Ebean.update(updatePercussion);
+        updatePercussion.setPlayer(Integer.parseInt(percussionUpdateForm.data().get("player_id")));
         updatePercussion.update();
         return redirect(routes.PercussionControl.percussion());
     }

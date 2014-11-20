@@ -13,7 +13,7 @@
 			<th>ID</th>
 			<th>Instrument</th>
 			<th>Type</th>
-			<th>Player ID</th>
+			<th>Player</th>
 			<th>Delete Row</th>
 			<th>Update Row</th>
 		</tr>
@@ -22,7 +22,7 @@
 			<td>@percussion.getId()</td>
 			<td>@percussion.getInstrument()</td>
 			<td>@percussion.getType()</td>
-			<td>@percussion.getPlayer()</td>
+			<td>@percussion.getPlayer().getName()</td>
 			<td>
 			@form(routes.PercussionControl.delete(percussion.getId())) {
 				<input type="submit" value="Delete" class="btn btn-danger">

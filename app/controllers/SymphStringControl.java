@@ -23,6 +23,7 @@ public class SymphStringControl extends Controller {
     		return badRequest(views.html.symphonicstringForm.render(symphonicstringForm));
     	}
     	SymphonicString mySymphonicString = symphonicstringForm.get();
+        mySymphonicString.setPlayer(Integer.parseInt(symphonicstringForm.data().get("player_id")));
         mySymphonicString.save();
     	return redirect(routes.SymphStringControl.symphonicstring());
     }
@@ -39,7 +40,7 @@ public class SymphStringControl extends Controller {
         }
         SymphonicString updateSymphonicString = symphonicstringUpdateForm.get();
         updateSymphonicString.setId(id);
-        // Ebean.update(updateSymphonicString);
+        updateSymphonicString.setPlayer(Integer.parseInt(symphonicstringUpdateForm.data().get("player_id")));
         updateSymphonicString.update();
         return redirect(routes.SymphStringControl.symphonicstring());
     }

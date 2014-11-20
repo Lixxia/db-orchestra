@@ -79,6 +79,10 @@ public class Players extends Model {
 		return this.last_name;
 	}
 
+	public String getName() {
+		return this.first_name + " " + this.last_name;
+	}
+
 	public String getEmail() {
 		return this.email;
 	}
@@ -99,9 +103,11 @@ public class Players extends Model {
 		this.id = id;
 	}
 
-	public Players(String first_name, String last_name) {
-		this.first_name = first_name;
-		this.last_name = last_name;
+	public static Map<String, String> options() {
+		Map<String, String> options = new LinkedHashMap<String, String>();
+		for (Players p : Players.find.orderBy("id").findList()) {
+			options.put(Integer.toString(p.id),(p.first_name + " " + p.last_name));
+		}
+		return options;
 	}
-
 }

@@ -8,7 +8,13 @@
 		<fieldset>
 				@inputText(woodwindUpdateForm("instrument"), '_label -> "Instrument", 'class -> "form-control")
 				@inputText(woodwindUpdateForm("clef"), '_label -> "Clef", 'class -> "form-control")
-				@inputText(woodwindUpdateForm("player_id"), '_label -> "Player Id", 'class -> "form-control")
+				
+				@select(
+					woodwindUpdateForm("player_id"),
+					options(Players.options()),
+					'_label -> "Player", '_default -> Woodwind.find.byId(id).getPlayer().getName(),
+					'_showConstraints -> false, 'class -> "form-control"
+				)
 		</fieldset>
 
 		<div class="actions">

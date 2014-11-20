@@ -10,7 +10,13 @@
 				@inputText(brassForm("instrument_key"), '_label -> "Key", 'class -> "form-control")
 				@inputText(brassForm("clef"), '_label -> "Clef", 'class -> "form-control")
 				@inputText(brassForm("seat"), '_label -> "Seat", 'class -> "form-control")
-				@inputText(brassForm("player_id"), '_label -> "Player Id", 'class -> "form-control")
+				
+				@select(
+					brassForm("player_id"),
+					options(Players.options()),
+					'_label -> "Player", '_default -> "-- Choose a Player --",
+					'_showConstraints -> false, 'class -> "form-control"
+				)
 		</fieldset>
 
 		<div class="actions">

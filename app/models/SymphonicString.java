@@ -26,14 +26,11 @@ public class SymphonicString extends Model {
 	@Column(name = "clef")
 	public String clef;
 
-	@Column(name = "player_id")
-	public int player_id;
-
     @OneToOne
     @JoinColumn(name = "player_id", referencedColumnName = "id")
 	public Players myPlayer;
 
-	public static Finder<Integer,SymphonicString> find = new Finder(
+	public static Model.Finder<Integer,SymphonicString> find = new Finder(
 		Integer.class, SymphonicString.class
 	);
 
@@ -70,12 +67,17 @@ public class SymphonicString extends Model {
 	public int getSeat() {
 		return this.seat;
 	}
+
 	public String getClef() {
 		return this.clef;
 	}
 
-	public int getPlayer() {
-		return this.player_id;
+	public Players getPlayer() {
+		return this.myPlayer;
+	}
+
+	public void setPlayer(int player_id) {
+		this.myPlayer = Players.find.byId(player_id);
 	}
 
 	public void setId(int id) {
