@@ -1,13 +1,4 @@
 delimiter //
-create trigger update_players before insert on Players
-	for each row
-	begin
-		set @id=new.orchestra_id;
-			update Orchestra set num_players = num_players + 1 where id = @id;
-	end;// 
-delimiter ;
-
-delimiter //
 
 CREATE TRIGGER update_players BEFORE INSERT ON Players
 	FOR EACH ROW
@@ -19,6 +10,20 @@ CREATE TRIGGER update_players BEFORE INSERT ON Players
 	END;//
 
 delimiter ;
+
+delimiter //
+
+CREATE TRIGGER update_players_del AFTER DELETE ON Players
+	FOR EACH ROW
+	BEGIN
+		SET @id = old.orchestra_id;
+		UPDATE Orchestra 
+		SET num_players = num_players - 1
+		WHERE id = @id;
+	END;//
+
+delimiter ;
+
 
 
 delimiter //
