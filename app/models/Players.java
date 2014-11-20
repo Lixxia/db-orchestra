@@ -7,8 +7,6 @@ import play.db.ebean.*;
 import play.data.format.*;
 import play.data.validation.*;
 
-import javax.persistence.*;
-
 @Entity
 @Table(name = "Players")
 public class Players extends Model {
@@ -47,7 +45,7 @@ public class Players extends Model {
     @JoinColumn(name = "orchestra_id", referencedColumnName = "id")
 	public Orchestra myOrchestra;
 
-	public static Finder<Integer,Players> find = new Finder(
+	public static Model.Finder<Integer,Players> find = new Finder(
 		Integer.class, Players.class
 	);
 

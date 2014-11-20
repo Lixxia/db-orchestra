@@ -1,6 +1,5 @@
 nav {
 	background-color: white;
-
 }
 
 body {
@@ -27,4 +26,8 @@ body {
     text-align:center;
     /* inline-block space fix */
     margin-right:-4px;
+}
+
+.fixed-bottom {
+    padding-top: 30%;
 }
