@@ -4,7 +4,7 @@
 Project for my Fall 2014 Databases course. Created a simple orchestra database with mySQL and the Play framework. 
 
 ## Presentation Link
-[On Slid.es](slides.com/laurabarber/dbproj/)
+[On Slid.es](https://slides.com/laurabarber/dbproj/)
 
 ## Project Checklist
 - [x] *User Views*
