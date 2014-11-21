@@ -9,7 +9,7 @@ Project for my Fall 2014 Databases course. Created a simple orchestra database w
 ## Project Checklist
 - [x] *User Views*
 - [x] *Normalization*
-- [x] *ER Diagram* ![ ](https://i.imgur.com/MsfuZvF.png)
+- [x] *[ER Diagram](https://i.imgur.com/MsfuZvF.png)**
 - [x] *Table DDL:* At least 7 - Seen in Evolution script.
 - [x] *View DDL:* At least 1 - Seen in app/views
 - [x] *Procedures DDL:* At least 1 - Seen in app/controllers
