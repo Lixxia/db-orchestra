@@ -20,3 +20,8 @@ Project for my Fall 2014 Databases course. Created a simple orchestra database w
 - [x] *Simple reports* 
 - [x] *Integrity Enforcement:* Not Null and restrictions on delete/update of Players table. 
 - [x] *Isolation Level:* Repeatable read.
+
+## TODO
+- [ ] Fix conf/routes
+- [ ] Host website
+- [ ] Upload Database
