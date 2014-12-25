@@ -22,6 +22,5 @@ Project for my Fall 2014 Databases course. Created a simple orchestra database w
 - [x] *Isolation Level:* Repeatable read.
 
 ## TODO
-- [ ] Fix conf/routes
 - [ ] Host website
 - [ ] Upload Database
