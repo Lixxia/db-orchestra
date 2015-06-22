@@ -1,3 +1,5 @@
+import NativePackagerKeys._
+
 name := """db-orchestra"""
 
 version := "1.0-SNAPSHOT"
@@ -6,8 +8,6 @@ lazy val root = (project in file(".")).enablePlugins(PlayJava)
 
 scalaVersion := "2.11.1"
 
-import NativePackagerKeys._
-
 libraryDependencies ++= Seq(
   javaJdbc,
   javaEbean,
@@ -15,7 +15,3 @@ libraryDependencies ++= Seq(
   javaWs,
   "mysql" % "mysql-connector-java" % "5.1.18"
 )
-
-WebKeys.webTarget := target.value / "scala-web"
-
-artifactPath in PlayKeys.playPackageAssets := WebKeys.webTarget.value / (artifactPath in PlayKeys.playPackageAssets).value.getName
