@@ -1,1 +1,1 @@
-web: target/universal/stage/bin/db-orchestra -Dhttp.port=$PORT $PLAY_OPTS
+web: target/universal/stage/bin/db-orchestra -Dconfig.file=conf/application.conf -Dhttp.port=$PORT $PLAY_OPTS 
