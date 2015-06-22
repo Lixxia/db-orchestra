@@ -1,6 +1,6 @@
-app/assets
-conf/evolutions
+/app/assets
+/conf/evolutions
 /test
 /.settings
-logs
+/logs
 /.idea
