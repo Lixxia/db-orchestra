@@ -1,0 +1,6 @@
+app/assets
+conf/evolutions
+/test
+/.settings
+logs
+/.idea
