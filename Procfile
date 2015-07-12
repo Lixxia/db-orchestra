@@ -1,1 +1,1 @@
-web: target/universal/stage/bin/db-orchestra -Dconfig.file=conf/application.conf -DapplyEvolutions.default=true -Dhttp.port=$PORT $PLAY_OPTS
+web: target/universal/stage/bin/db-orchestra -Dconfig.file=conf/application.conf -DapplyEvolutions.default=true -Dhttp.port=$PORT $PLAY_OPTS -Ddb.default.url=$CLEARDB_DATABASE_URL
