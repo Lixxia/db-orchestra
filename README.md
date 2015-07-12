@@ -6,6 +6,11 @@ Project for my Fall 2014 Databases course. Created a simple orchestra database w
 ## Presentation Link
 [On Slid.es](https://slides.com/laurabarber/dbproj/)
 
+## Website Link
+[Website](https://safe-bastion-4787.herokuapp.com/)
+
+Website hosted with [Heroku](https://www.heroku.com/home), database hosted using [ClearDB](https://addons.heroku.com/cleardb).
+
 ## Project Checklist
 - [x] *User Views*
 - [x] *Normalization*
@@ -22,5 +27,5 @@ Project for my Fall 2014 Databases course. Created a simple orchestra database w
 - [x] *Isolation Level:* Repeatable read.
 
 ## TODO
-- [ ] Host website
-- [ ] Upload Database
+- [x] Host website
+- [x] Upload Database
