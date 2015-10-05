@@ -1,4 +1,4 @@
-@(orchestra: List[Orchestra])
+@(orchestra: List[Orchestra])(error: String)
 
 @import helper._
 
@@ -8,6 +8,7 @@
 		<small>contains all orchestra information.</small>
 		</h1>
 	</div>
+	@Html(error)
 		<table class="table table-hover">
 		<tr>
 			<th>ID</th>

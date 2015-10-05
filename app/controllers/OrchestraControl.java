@@ -25,6 +25,9 @@ public class OrchestraControl extends Controller {
     	}
     	Orchestra myOrchestra = orchestraForm.get();
         myOrchestra.save();
+        if (Orchestra.find.findRowCount() > 15) {
+            return badRequest(orchestra.render(Orchestra.find.all(),"<div class='alert alert-warning alert-dismissible' role='alert'><button type='button' class='close' data-dismiss='alert' aria-label='Close'><span aria-hidden='true'>&times;</span></button>Error.</div>"));
+        } 
     	return redirect(routes.OrchestraControl.orchestra());
     }
 
@@ -46,7 +49,7 @@ public class OrchestraControl extends Controller {
 
     public static Result orchestra() {
     	return ok(orchestra.render(
-    		Orchestra.find.all()
+    		Orchestra.find.all(), ""
     	));
     }
 
