@@ -25,6 +25,10 @@ public class OrchestraControl extends Controller {
     	}
     	Orchestra myOrchestra = orchestraForm.get();
         myOrchestra.save();
+        System.out.println(Orchestra.find.findRowCount());
+        if (Orchestra.find.findRowCount() > 15) {
+            return badRequest(orchestra.render(Orchestra.find.all(),"inherit","Cannot add new Orchestra entry at this time."));
+        } 
     	return redirect(routes.OrchestraControl.orchestra());
     }
 
@@ -46,7 +50,7 @@ public class OrchestraControl extends Controller {
 
     public static Result orchestra() {
     	return ok(orchestra.render(
-    		Orchestra.find.all()
+    		Orchestra.find.all(), "none", ""
     	));
     }
 
