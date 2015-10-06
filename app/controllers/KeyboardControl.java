@@ -23,9 +23,14 @@ public class KeyboardControl extends Controller {
     		return badRequest(views.html.keyboardForm.render(keyboardForm));
     	}
     	Keyboard myKeyboard = keyboardForm.get();
-        myKeyboard.setPlayer(Integer.parseInt(keyboardForm.data().get("player_id")));
-        myKeyboard.save();
-    	return redirect(routes.KeyboardControl.keyboard());
+        if (Keyboard.find.findRowCount() > 100) {
+            return badRequest(keyboard.render(Keyboard.find.all(),"inherit","Cannot add new Keyboard entry at this time."));
+        }
+        else {
+            myKeyboard.setPlayer(Integer.parseInt(keyboardForm.data().get("player_id")));
+            myKeyboard.save();
+        	return redirect(routes.KeyboardControl.keyboard());
+        }
     }
 
     public static Result createUpdateForm(int id) {
@@ -47,7 +52,7 @@ public class KeyboardControl extends Controller {
 
     public static Result keyboard() {
     	return ok(keyboard.render(
-    		Keyboard.find.all()
+    		Keyboard.find.all(), "none", ""
     	));
     }
 

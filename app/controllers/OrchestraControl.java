@@ -24,12 +24,13 @@ public class OrchestraControl extends Controller {
     		return badRequest(views.html.orchestraForm.render(orchestraForm));
     	}
     	Orchestra myOrchestra = orchestraForm.get();
-        myOrchestra.save();
-        System.out.println(Orchestra.find.findRowCount());
         if (Orchestra.find.findRowCount() > 15) {
             return badRequest(orchestra.render(Orchestra.find.all(),"inherit","Cannot add new Orchestra entry at this time."));
         } 
-    	return redirect(routes.OrchestraControl.orchestra());
+        else {
+            myOrchestra.save();
+            return redirect(routes.OrchestraControl.orchestra());
+        }
     }
 
     public static Result createUpdateForm(int id) {

@@ -23,9 +23,14 @@ public class SymphStringControl extends Controller {
     		return badRequest(views.html.symphonicstringForm.render(symphonicstringForm));
     	}
     	SymphonicString mySymphonicString = symphonicstringForm.get();
-        mySymphonicString.setPlayer(Integer.parseInt(symphonicstringForm.data().get("player_id")));
-        mySymphonicString.save();
-    	return redirect(routes.SymphStringControl.symphonicstring());
+        if (SymphonicString.find.findRowCount() > 400) {
+            return badRequest(symphonicstring.render(SymphonicString.find.all(),"inherit","Cannot add new Symphonic String entry at this time."));
+        }
+        else {
+            mySymphonicString.setPlayer(Integer.parseInt(symphonicstringForm.data().get("player_id")));
+            mySymphonicString.save();
+        	return redirect(routes.SymphStringControl.symphonicstring());
+        }
     }
 
     public static Result createUpdateForm(int id) {
@@ -47,7 +52,7 @@ public class SymphStringControl extends Controller {
 
     public static Result symphonicstring() {
     	return ok(symphonicstring.render(
-    		SymphonicString.find.all()
+    		SymphonicString.find.all(), "none", ""
     	));
     }
 

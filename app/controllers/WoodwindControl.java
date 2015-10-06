@@ -23,9 +23,14 @@ public class WoodwindControl extends Controller {
     		return badRequest(views.html.woodwindForm.render(woodwindForm));
     	}
     	Woodwind myWoodwind = woodwindForm.get();
-        myWoodwind.setPlayer(Integer.parseInt(woodwindForm.data().get("player_id")));
-        myWoodwind.save();
-    	return redirect(routes.WoodwindControl.woodwind());
+        if (Woodwind.find.findRowCount() > 100) {
+            return badRequest(woodwind.render(Woodwind.find.all(),"inherit","Cannot add new Woodwind entry at this time."));
+        }
+        else {
+            myWoodwind.setPlayer(Integer.parseInt(woodwindForm.data().get("player_id")));
+            myWoodwind.save();
+        	return redirect(routes.WoodwindControl.woodwind());
+        }
     }
 
     public static Result createUpdateForm(int id) {
@@ -47,7 +52,7 @@ public class WoodwindControl extends Controller {
 
     public static Result woodwind() {
     	return ok(woodwind.render(
-    		Woodwind.find.all()
+    		Woodwind.find.all(), "none", ""
     	));
     }
 
