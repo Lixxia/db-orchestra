@@ -23,9 +23,14 @@ public class BrassControl extends Controller {
     		return badRequest(views.html.brassForm.render(brassForm));
     	}
     	Brass myBrass = brassForm.get();
-        myBrass.setPlayer(Integer.parseInt(brassForm.data().get("player_id")));
-        myBrass.save();
-    	return redirect(routes.BrassControl.brass());
+        if (Brass.find.findRowCount() > 100) {
+            return badRequest(brass.render(Brass.find.all(),"inherit","Cannot add new Brass entry at this time."));
+        }
+        else {
+            myBrass.setPlayer(Integer.parseInt(brassForm.data().get("player_id")));
+            myBrass.save();
+            return redirect(routes.BrassControl.brass());
+        }  
     }
 
     public static Result createUpdateForm(int id) {
@@ -47,7 +52,7 @@ public class BrassControl extends Controller {
 
     public static Result brass() {
     	return ok(brass.render(
-    		Brass.find.all()
+    		Brass.find.all(), "none", ""
     	));
     }
 

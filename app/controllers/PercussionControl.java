@@ -23,9 +23,14 @@ public class PercussionControl extends Controller {
     		return badRequest(views.html.percussionForm.render(percussionForm));
     	}
     	Percussion myPercussion = percussionForm.get();
-        myPercussion.setPlayer(Integer.parseInt(percussionForm.data().get("player_id")));
-        myPercussion.save();
-    	return redirect(routes.PercussionControl.percussion());
+        if (Percussion.find.findRowCount() > 100) {
+            return badRequest(percussion.render(Percussion.find.all(),"inherit","Cannot add new Percussion entry at this time."));
+        }
+        else {
+            myPercussion.setPlayer(Integer.parseInt(percussionForm.data().get("player_id")));
+            myPercussion.save();
+        	return redirect(routes.PercussionControl.percussion());
+        }
     }
 
     public static Result createUpdateForm(int id) {
@@ -47,7 +52,7 @@ public class PercussionControl extends Controller {
 
     public static Result percussion() {
     	return ok(percussion.render(
-    		Percussion.find.all()
+    		Percussion.find.all(), "none", ""
     	));
     }
 

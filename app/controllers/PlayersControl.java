@@ -23,9 +23,14 @@ public class PlayersControl extends Controller {
     		return badRequest(views.html.playersForm.render(playersForm));
     	}
     	Players myPlayers = playersForm.get();
-        myPlayers.setOrchestra(Integer.parseInt(playersForm.data().get("orchestra_id")));
-        myPlayers.save();
-    	return redirect(routes.PlayersControl.players());
+        if (Players.find.findRowCount() > 800) {
+            return badRequest(players.render(Players.find.all(),"inherit","Cannot add new Players entry at this time."));
+        }
+        else {
+            myPlayers.setOrchestra(Integer.parseInt(playersForm.data().get("orchestra_id")));
+            myPlayers.save();
+        	return redirect(routes.PlayersControl.players());
+        }
     }
 
     public static Result createUpdateForm(int id) {
@@ -47,7 +52,7 @@ public class PlayersControl extends Controller {
 
     public static Result players() {
     	return ok(players.render(
-    		Players.find.all()
+    		Players.find.all(), "none", ""
     	));
     }
 
