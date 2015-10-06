@@ -11,6 +11,8 @@ Project for my Fall 2014 Databases course. Created a simple orchestra database w
 
 Website hosted with [Heroku](https://www.heroku.com/home), database hosted using [ClearDB](https://addons.heroku.com/cleardb).
 
+*Note:* Some triggers/functions don't work on the website due to MySQL limitiations with ClearDB free tier.
+
 ## Project Checklist
 - [x] *User Views*
 - [x] *Normalization*
